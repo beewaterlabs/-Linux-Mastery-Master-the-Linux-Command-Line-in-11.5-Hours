@@ -9,6 +9,7 @@ sudo apt install ubuntu-desktop
 
 # Now Ubuntu desktop is alive!
 
-# CTRL +l        Clear the screen.
-
+# CTRL + l                       Clear the screen.
+# CTRL + d                       Close terminal.
+# history -c; history -w         Clears history and writes changes to make them permanent.
 
