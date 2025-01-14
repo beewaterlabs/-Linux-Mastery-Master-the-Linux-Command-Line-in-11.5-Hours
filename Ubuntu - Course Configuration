@@ -1,2 +1,14 @@
 # Ubuntu - Course Configuration
+# I could not find an Desktop version of Ubuntu that was build for the Macintosh OS.
+# I was able to find "ubuntu-24.04.1-live-server-arm64.iso".
+# Once installed I ran the following command to upgrade to the Desktop version with a gnome interface:
+
+sudo apt update
+sudo apt upgrade
+sudo apt install ubuntu-desktop
+
+# Now Ubuntu desktop is alive!
+
+# CTRL +l        Clear the screen.
+
 
