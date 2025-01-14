@@ -26,4 +26,9 @@ cal -A 1 -B 1 12 2024          Shows 1 month before and after 12 2024.
                                Options modify a command's behaviour.
                                 
 man cal                        Man page for <cal> program, etc.
+man -k which                   Shows sections that include the word which.
+                               You will see sections listed within ()'s = (1), (8), (5), etc.
+man 1 which                    To open up section 1
+[]                             Optional.
+...                            A command can accept one or more occurrences of a particular argument type.
 
