@@ -9,6 +9,19 @@ sudo apt install ubuntu-desktop
 
 # Now Ubuntu desktop is alive!
 
+# There are issues with missing drivers that will cause your mouse to be captured / not copy and paste from the host OS.
+# You can resolve this by installing the mouse drivers:
+
+# From the Oracle VirtualBox Manager:
+#   Attach the VBoxGuestAdditions.iso 
+#   You can get the "VBoxGuestAdditions.iso" here ---> /Applications/VirtualBox.app/(Right click)Contents/MacOS
+# From the Ubuntu VM:
+    apt-get update
+    apt-get install gcc make perl
+    cd /media/adminuser/VBox_GAs_7.1.4/
+    sh VBoxLinuxAdditions-arm64.run
+    reboot
+
 CTRL + l                       Clear the screen.
 CTRL + d                       Close terminal.
 history -c; history -w         Clears history and writes changes to make them permanent.
