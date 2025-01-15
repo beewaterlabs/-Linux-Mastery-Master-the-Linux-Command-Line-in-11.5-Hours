@@ -1,5 +1,6 @@
 # Man page(s)
 # e.g.              (Latin) exempli gratia (for example)
+# Ubuntu VM e.g.:   +++++++24.04.1 LTS (Noble Numbat)+++++++
 
 man cal          		Man page for <cal> program, etc.
 man 1 which         To open up section 1
@@ -37,9 +38,6 @@ man -k which        Shows sections that include the word which.
 # 8	         System admin. tools & Daemons   Commands that require root or other administrative privileges to use.
 
 
-
-
-+++++++24.04.1 LTS (Noble Numbat)+++++++
 
 
 
