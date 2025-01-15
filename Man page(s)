@@ -3,12 +3,12 @@
 # Ubuntu VM e.g.:   +++++++24.04.1 LTS (Noble Numbat)+++++++
 
 man cal          		Man page for <cal> program, etc.
-man 1 which         To open up section 1
+man 1 which         To open up section 1.
 []                  Optional.
 <THING>             Must have in command.
 [-a | -f]           Can only have 1 of 2 options.
-...                 A command can accept one or more occurrences of a particular argument type (e.g., more than one file name)
-                    
+...                 A command can accept one or more occurrences of a particular argument type (e.g., more than one file name).
+
 man -k              Search manual pages (e.g., man -k who)
 
 +++++++++++++++++++++24.04.1 LTS (Noble Numbat)+++++++++++++++++++++
