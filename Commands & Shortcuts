@@ -3,6 +3,11 @@
 CTRL + l                       		  Clear the screen.
 CTRL + d                      		  Close terminal.
 history -c; history -w  		        Clears history and writes changes to make them permanent.
+!7                                  Run the 7th command in your history.
+!!                                  Run the last commnad, again.  
+!<string>                           Run the last command in your history that matches the givin string.
+                                      If I ran the command !lsb ---> It would run lsblk as the "b" seperates it from previous ls command in the history.
+
 
 echo $PATH                    	    This variable contains a colon-separated list of directories where the system searches for executable files.
 which <cal>                   	    Shows where the command / program lives.
