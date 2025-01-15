@@ -9,18 +9,31 @@ sudo apt install ubuntu-desktop
 
 # Now Ubuntu desktop is alive!
 
-# There are issues with missing drivers that will cause your mouse to be captured / not copy and paste from the host OS.
-# You can resolve this by installing the mouse drivers:
+# There are issues with missing drivers that will cause your mouse to be captured within the VM / not copy and paste from the host OS.
+# You can resolve this by installing the supported VBox kernel module mouse driver.
+# This process creates the modules on the system where they will be used:
 
 # From the Oracle VirtualBox Manager:
-#   Attach the VBoxGuestAdditions.iso 
-#   You can get the "VBoxGuestAdditions.iso" here ---> /Applications/VirtualBox.app/(Right click)Contents/MacOS
+
+#   You can get the "VBoxGuestAdditions.iso" here ---> /Applications/VirtualBox.app/(Right click)Contents/MacOS/VBoxGuestAdditions.iso
+#   Attach the VBoxGuestAdditions.iso (Settings/Storage/Devices/Then attach .iso media)
+
+# You may need to install some software packages from the distribution which are needed for the build process. Required packages may include the following:
+
+# GNU compiler (GCC)
+# GNU Make (make)
+# Kernel header files (Should have the correct packages installed by default)
+
 # From the Ubuntu VM:
+
     apt-get update
     apt-get install gcc make perl
     cd /media/adminuser/VBox_GAs_7.1.4/
     sh VBoxLinuxAdditions-arm64.run
     reboot
+
+# Now you can copy and paste between your host OS and the Oracle Ubuntu VM without being notified about "mouse capture", just like the software tool Synergy :)
+
 
 CTRL + l                       Clear the screen.
 CTRL + d                       Close terminal.
