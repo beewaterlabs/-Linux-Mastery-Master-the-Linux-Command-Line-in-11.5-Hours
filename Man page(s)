@@ -8,12 +8,13 @@ man 1 which         To open up section 1
 <THING>             Must have in command.
 [-a | -f]           Can only have 1 of 2 options.
 ...                 A command can accept one or more occurrences of a particular argument type (e.g., more than one file name)
-
+                    
 man -k              Search manual pages (e.g., man -k who)
 
 +++++++++++++++++++++24.04.1 LTS (Noble Numbat)+++++++++++++++++++++
 
 user@ubuntu:~# man -k who
+
 btrfs-filesystem (8) - command group that primarily does work on the whole filesystems
 ldapwhoami (1)       - LDAP who am i? tool
 w (1)                - Show who is logged on and what they are doing.
@@ -37,6 +38,74 @@ man -k which        Shows sections that include the word which.
 # 7	         Miscellaneous	                 Overviews of miscellaneous topics such as protocols, filesystems and so on.
 # 8	         System admin. tools & Daemons   Commands that require root or other administrative privileges to use.
 
++++++++++++++++++++++24.04.1 LTS (Noble Numbat)+++++++++++++++++++++
+
+user@ubuntu:~# man -k "list directory contents"
+
+dir (1)              - list directory contents
+ls (1)               - list directory contents
+ntfsls (8)           - list directory contents on an NTFS filesystem
+vdir (1)             - list directory contents
+
++++++++++++++++++++++24.04.1 LTS (Noble Numbat)+++++++++++++++++++++
+
+man ls          List the man page for ls, first section (1) commands do not need a numerical value.
+
+# Other sections can be referenced by their section number:
+
++++++++++++++++++++++24.04.1 LTS (Noble Numbat)+++++++++++++++++++++
+
+user@ubuntu:~# man -k which
+
+cpupower-frequency-set (1) - A small tool which allows to modify cpufreq settings.
+cpuwalk.bt (8)       - Sample which CPUs are executing processes.. Uses bpftrace/eBPF.
+getcpu (2)           - determine CPU and NUMA node on which the calling thread is running
+getgrouplist (3)     - get list of groups to which a user belongs
+IO::AtomicFile (3pm) - write a file which is updated atomically
+lcf (1)              - Determine which of the historical versions of a config is insta...
+pam_exec (8)         - PAM module which calls an external command
+pam_warn (8)         - PAM module which logs all PAM items if called
+sched_getcpu (3)     - determine CPU on which the calling thread is running
+securetty (5)        - list of terminals on which root is allowed to login
+URI::WithBase (3pm)  - URIs which remember their base
+which (1)            - locate a command
+which.debianutils (1) - locate a command
+
+user@ubuntu:~# man sched_getcpu 3
+
+sched_getcpu(3)                Library Functions Manual                sched_getcpu(3)
+
+NAME
+       sched_getcpu - determine CPU on which the calling thread is running
+
+LIBRARY
+       Standard C library (libc, -lc)
+
+SYNOPSIS
+       #include <sched.h>
+
+       int sched_getcpu(void);
+
+   Feature Test Macro Requirements for glibc (see feature_test_macros(7)):
+
+       sched_getcpu():
+           Since glibc 2.14:
+               _GNU_SOURCE
+           Before glibc 2.14:
+               _BSD_SOURCE || _SVID_SOURCE
+                   /* _GNU_SOURCE also suffices */
+
+DESCRIPTION
+       sched_getcpu()  returns  the  number  of the CPU on which the calling thread is
+       currently executing.
+
+RETURN VALUE
+       On success, sched_getcpu() returns a nonnegative CPU number.  On error,  -1  is
+       returned and errno is set to indicate the error.
+
+ Manual page sched_getcpu(3) line 1/62 38% (press h for help or q to quit)
+
++++++++++++++++++++++24.04.1 LTS (Noble Numbat)+++++++++++++++++++++
 
 
 
