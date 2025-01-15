@@ -21,9 +21,9 @@ cat /etc/passwd                     Show all users. This is a lot of data to par
                                     Other ways to view user data ("user-to-view" & ":0" = root user):
                                     
 +++++++24.04.1 LTS (Noble Numbat)+++++++
-
-adminuser@ubuntu:~$ cat /etc/passwd | grep ":0"
-root:x:0:0:root:/root:/bin/bash
+                                                            
+adminuser@ubuntu:~$ cat /etc/passwd | grep ":0"              
+root:x:0:0:root:/root:/bin/bash                              
 
 adminuser@ubuntu:~$ awk -F: '$1=="root"' /etc/passwd
 root:x:0:0:root:/root:/bin/bash
