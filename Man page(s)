@@ -1,8 +1,12 @@
 # Man page(s)
 
 man cal          		Man page for <cal> program, etc.
-man -k which        Shows sections that include the word which.
-                    You will see sections listed within ()'s = (1), (8), (5), etc.
 man 1 which         To open up section 1
 []                  Optional.
 ...                 A command can accept one or more occurrences of a particular argument type.
+
+man -k which        Shows sections that include the word which.
+                    You will see sections listed within ()'s = (1), (8), (5), etc.
+
++++++++24.04.1 LTS (Noble Numbat)+++++++
+
