@@ -11,6 +11,27 @@ Linux is amazing!
 Word!
 Wow!
 
+>>                  Append text to a file.
+
 Data strem 0        Standard input.
 Data strem 1        Standard output.
 Data strem 2        Standard error.
+
+# Redirect text from one file to another file:
+
++++++++24.04.1 LTS (Noble Numbat)+++++++
+
+adminuser@ubuntu:~$ cat > input.txt
+Hello World!
+^C
+
+adminuser@ubuntu:~$ cat input.txt
+Hello World!
+
+adminuser@ubuntu:~$ cat < input.txt > hello.txt
+adminuser@ubuntu:~$ cat hello.txt 
+Hello World!
+
++++++++24.04.1 LTS (Noble Numbat)+++++++
+
+
