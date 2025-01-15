@@ -10,6 +10,7 @@ history -c; history -w  		        Clears history and writes changes to make them
 
 ls -l                               Use a long listing format, this will include. 
 ls -h                               Human readable.
+--human-readable                    Long form option for -h of ls command.
 ls -lah                             -l: Displays detailed information about files and directories in a long format, including permissions, number of links, owner, group, size, and modification.
                                     -a: Lists all files and directories, including hidden ones (those starting with a dot).
                                     -h: Prints file sizes in a human-readable format, using units like KB, MB, or GB.
