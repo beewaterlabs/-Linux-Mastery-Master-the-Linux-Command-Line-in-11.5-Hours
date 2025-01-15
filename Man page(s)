@@ -1,21 +1,45 @@
 # Man page(s)
+# e.g.              (Latin) exempli gratia (for example)
 
 man cal          		Man page for <cal> program, etc.
 man 1 which         To open up section 1
 []                  Optional.
-...                 A command can accept one or more occurrences of a particular argument type.
+<THING>             Must have in command.
+[-a | -f]           Can only have 1 of 2 options.
+...                 A command can accept one or more occurrences of a particular argument type (e.g., more than one file name)
+
+man -k              Search manual pages (e.g., man -k who)
+
++++++++++++++++++++++24.04.1 LTS (Noble Numbat)+++++++++++++++++++++
+
+user@ubuntu:~# man -k who
+btrfs-filesystem (8) - command group that primarily does work on the whole filesystems
+ldapwhoami (1)       - LDAP who am i? tool
+w (1)                - Show who is logged on and what they are doing.
+who (1)              - show who is logged on
+whoami (1)           - print effective user name
+
++++++++++++++++++++++24.04.1 LTS (Noble Numbat)+++++++++++++++++++++
 
 man -k which        Shows sections that include the word which.
-                    You will see sections listed within ()'s = (1), (8), (5), etc.
+                    You will see sections listed within ()'s = (1), (8), (5) as seen below:
 
 # Manual Structure Cheat Sheet
-# Section    Contains                Description
+# Section    Contains                        Description
 
-# 1          User Commands           Commands that can be run from the shell by a normal user (typically no administrative privileges are needed)   
-# 2	         System Calls	           Programming functions used to make calls to the Linux kernel
-# 3	         C Library Functions	   Programming functions that provide interfaces to specific programming libraries.
+# 1          User Commands                   Commands that can be run from the shell by a normal user (typically no administrative privileges are needed).   
+# 2	         System Calls	                   Programming functions used to make calls to the Linux kernel.
+# 3	         C Library Functions	           Programming functions that provide interfaces to specific programming libraries.
+# 4	         Devices and Special Files       File system nodes that represent hardware devices or software devices.
+# 5	         File Formats and Conventions	   The structure and format of file types or specific configuration files.
+# 6	         Games 		                       Games available on the system.
+# 7	         Miscellaneous	                 Overviews of miscellaneous topics such as protocols, filesystems and so on.
+# 8	         System admin. tools & Daemons   Commands that require root or other administrative privileges to use.
+
+
 
 
 +++++++24.04.1 LTS (Noble Numbat)+++++++
+
 
 
