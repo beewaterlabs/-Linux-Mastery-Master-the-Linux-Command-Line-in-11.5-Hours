@@ -8,5 +8,14 @@ man 1 which         To open up section 1
 man -k which        Shows sections that include the word which.
                     You will see sections listed within ()'s = (1), (8), (5), etc.
 
+# Manual Structure Cheat Sheet
+# Section    Contains                Description
+
+# 1          User Commands           Commands that can be run from the shell by a normal user (typically no administrative privileges are needed)   
+# 2	         System Calls	           Programming functions used to make calls to the Linux kernel
+# 3	         C Library Functions	   Programming functions that provide interfaces to specific programming libraries.
+
+
 +++++++24.04.1 LTS (Noble Numbat)+++++++
+
 
