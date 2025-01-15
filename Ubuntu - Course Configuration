@@ -35,27 +35,4 @@ sudo apt install ubuntu-desktop
 
 # Now you can copy and paste between your host OS and the Oracle Ubuntu VM without being notified about "mouse capture", just like the software tool Synergy :)
 
-
-CTRL + l                       Clear the screen.
-CTRL + d                       Close terminal.
-history -c; history -w         Clears history and writes changes to make them permanent.
-
-echo $PATH                     This variable contains a colon-separated list of directories where the system searches for executable files.
-which <cal>                    Shows where the command / program lives.
-cal 2025                       Show cal for 2025.
-cal -y                         Show currrent years calendar.
-
-cal -A 1 -B 1 12 2024          Shows 1 month before and after 12 2024.
-
-# Summary                      Command = CommandName -options inputs.
-                               CommandNames need to be on the shell's search path.
-                               Commands operate on inputs.
-                               Options modify a command's behaviour.
-                                
-man cal                        Man page for <cal> program, etc.
-man -k which                   Shows sections that include the word which.
-                               You will see sections listed within ()'s = (1), (8), (5), etc.
-man 1 which                    To open up section 1
-[]                             Optional.
-...                            A command can accept one or more occurrences of a particular argument type.
-
+        
