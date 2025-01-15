@@ -29,6 +29,7 @@ sudo apt install ubuntu-desktop
     apt-get update
     apt-get install gcc make perl
     cd /media/adminuser/VBox_GAs_7.1.4/
+    sudo -i
     sh VBoxLinuxAdditions-arm64.run
     reboot
 
