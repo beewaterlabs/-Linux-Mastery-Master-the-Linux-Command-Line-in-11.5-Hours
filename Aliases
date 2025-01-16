@@ -1,0 +1,13 @@
+# Aliases
+# Nicknames for your command pipelines.
+
+#  Saving a file with a full stop (e.g., .bash_aliases) creates a hidden file.
+
+# Ubuntu alias example:
+
+adminuser@ubuntu:~$ cat .bash_aliases 
+alias getdates='date | tee /home/adminuser/fulldate.txt | cut --delimiter=" " --fields=1 | tee /home/adminuser/shortdate.txt | xargs echo hello'
+
+adminuser@ubuntu:~$ getdates
+hello Thu
+
