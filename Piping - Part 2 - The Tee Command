@@ -1,0 +1,13 @@
+# Piping - Part 2 - The Tee Command
+
+-------Pictorial Representation-------
+
+ls -l |  tee file.txt  | less
+          __________        
+stdout   |__________|    stdin
+             |  |
+             |  |
+              \/
+           file.txt
+
+
