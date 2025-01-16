@@ -1,2 +1,32 @@
 # Piping - Part 1 - Piping Fundamentals
 
++++++++24.04.1 LTS (Noble Numbat)+++++++
+
+adminuser@ubuntu:~$ date > date.txt
+adminuser@ubuntu:~$ cat date.txt 
+Thu Jan 16 01:00:40 AM UTC 2025                   Each column is seperated by spaces. 
+
+cut < date.txt --delimiter " " --fields 1         Cut command will use the --delimiter option (Tells what devides the columns).
+                                                  " " = space is what delimits this file.
+                                                  --fields 1 (The first field).
+
+adminuser@ubuntu:~$ cut < date.txt --delimiter " " --fields 1
+Thu
+
+date | cut --delimiter " " --fields 1            Pipe the data from the date command standard output into the cut command's standard input.
+
+# This command pipes the data from the date command's standard output into the cut command's standard input and then adds the ouput to a file called today.txt:
+
+adminuser@ubuntu:~$ date | cut --delimiter " " --fields 1 > today.txt
+adminuser@ubuntu:~$ cat today.txt 
+Thu
+
+# You can send the data from the standard output of the cut command to another command by using a | (pipe):
+
+date | cut --delimiter " " --fields 1 | command -options args
+
+# Redirections > are processed before the pipes | in linux.
+
+
+
+
