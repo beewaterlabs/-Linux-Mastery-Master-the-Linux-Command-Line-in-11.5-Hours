@@ -1,7 +1,7 @@
 # Aliases
 # Nicknames for your command pipelines.
 
-#  Saving a file with a full stop (e.g., .bash_aliases) creates a hidden file.
+# Saving a file with a full stop (e.g., .hidden_file) creates a hidden file.
 
 # Ubuntu alias example:
 
@@ -10,4 +10,12 @@ alias getdates='date | tee /home/adminuser/fulldate.txt | cut --delimiter=" " --
 
 adminuser@ubuntu:~$ getdates
 hello Thu
+
+# Summary
+
+# Aliases go in a .bash_aliases file in your home folder.
+# Bonus Point: A period (.) at the start of a filename makes that file "hidden".
+# alias aliasName="command1 -options args | command2 -options -options args ..." (e.g., 'getdates' alias above)
+# aliases are accessible when you restart your terminal.
+# Bonus Point: Make sure the first command can be piped to!
 
