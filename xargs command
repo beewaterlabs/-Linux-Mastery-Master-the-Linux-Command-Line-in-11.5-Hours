@@ -18,6 +18,10 @@ Thu Jan 16 02:38:58 AM UTC 2025
 adminuser@ubuntu:~$ date | xargs echo "This is the file timestamp:"
 This is the file timestamp: Thu Jan 16 02:46:47 AM UTC 2025
 
+# xargs will process 1st.
+# So basically xargs is like a little plaster fix for when a command does not accept standard input, but only accepts command and arguments, you can use xargs to get around the problem.
+
+
 
 
 
