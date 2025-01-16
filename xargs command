@@ -13,4 +13,12 @@ hello
 adminuser@ubuntu:~$ date | xargs echo
 Thu Jan 16 02:38:58 AM UTC 2025
 
+# You can now add text to echo ---> "This is the file timestamp:"
+
+adminuser@ubuntu:~$ date | xargs echo "This is the file timestamp:"
+This is the file timestamp: Thu Jan 16 02:46:47 AM UTC 2025
+
+
+
+
 
