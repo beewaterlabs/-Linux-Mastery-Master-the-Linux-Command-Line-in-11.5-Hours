@@ -1,4 +1,16 @@
 # xargs command
 # The xargs command allows you to convert piped data into command line arguments, for commands that only accept command line arguments.
 
+# echo doesn't accept standard input. It only accepts command line arguments.
+
+# Here you can see that when you pipe date to the echo command, it only processes the echo text:
+
+adminuser@ubuntu:~$ date | echo "hello"
+hello
+
+# The xargs command will convert the data from standard input and it will put it instead into command line arguments, allowing the echo command to use the xargs converted command line argument:
+
+adminuser@ubuntu:~$ date | xargs echo
+Thu Jan 16 02:38:58 AM UTC 2025
+
 
