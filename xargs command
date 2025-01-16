@@ -21,6 +21,21 @@ This is the file timestamp: Thu Jan 16 02:46:47 AM UTC 2025
 # xargs will process 1st.
 # So basically xargs is like a little plaster fix for when a command does not accept standard input, but only accepts command and arguments, you can use xargs to get around the problem.
 
+# Summary:
+
+# Piping is a process that connects the standard output of one command to the standard input of another.
+
+# STDOUT = standard output
+# STDIN  = standard input
+# STDERR = standard error
+
+# Redirection of standard output breaks pipelines.
+
+# If you want to save a data snapshot without breaking your pipeline, use the T command.
+
+# If a command does not accept standard input, as long as the command accepts command line arguments, you can use the xargs command instead.
+
+
 
 
 
