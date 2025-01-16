@@ -18,4 +18,4 @@ hello Thu
 # alias aliasName="command1 -options args | command2 -options -options args ..." (e.g., 'getdates' alias above)
 # aliases are accessible when you restart your terminal.
 # Bonus Point: Make sure the first command can be piped to!
-
+# Aliases can be be piped as well. (Think of an aliases as building blocks)
