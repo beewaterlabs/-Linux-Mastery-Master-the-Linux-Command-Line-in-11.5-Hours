@@ -1,0 +1,4 @@
+# xargs command
+# The xargs command allows you to convert piped data into command line arguments, for commands that only accept command line arguments.
+
+
