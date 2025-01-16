@@ -2,12 +2,30 @@
 
 -------Pictorial Representation-------
 
-ls -l |  tee file.txt  | less
+ls -l | tee file.txt | less
           __________        
-stdout   |__________|    stdin
+stdout---|__________|-> stdin
              |  |
              |  |
               \/
            file.txt
+
+# Ubuntu example:
+
+adminuser@ubuntu:~$ date | tee fulldate.txt | cut --delimiter " " --fields 1
+Thu
+adminuser@ubuntu:~$ cat fulldate.txt 
+Thu Jan 16 02:14:35 AM UTC 2025
+
+# Once you do re-direction >, you can no longer pipe. Unless your using the tee command (snapshot) of data while continuing your piping.
+# The following cmd will run the date command and then take a snapshot of the full output and save it in the "fulldate.txt" file, then will process the cut command and re-direct the results to a file called "today.txt" 
+# Ubuntu example:
+
+adminuser@ubuntu:~$ date | tee fulldate.txt | cut --delimiter " " --fields 1 > today.txt
+adminuser@ubuntu:~$ cat fulldate.txt
+Thu Jan 16 02:23:10 AM UTC 2025
+adminuser@ubuntu:~$ cat today.txt 
+Thu
+
 
 
