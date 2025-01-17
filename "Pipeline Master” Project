@@ -1,0 +1,12 @@
+# “Pipeline Master” Project
+
+In the submission you should include 3 commands
+
+1. The command you used to create file1.txt in Task 1:
+ls /etc > file1.txt
+
+2. The command you used to create file2.txt in Task 1:
+ls /run > file2.txt
+
+3. The pipeline you used to create unsorted.txt and reversed.txt in Task 2:
+cat file1.txt file2.txt | tee unsorted.txt | sort -r unsorted.txt > reversed.txt
