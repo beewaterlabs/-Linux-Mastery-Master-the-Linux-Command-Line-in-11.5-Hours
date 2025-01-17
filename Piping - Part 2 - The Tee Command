@@ -10,6 +10,10 @@ stdout---|__________|-> stdin
               \/
            file.txt
 
+# Data strem 0        Standard input.
+# Data strem 1        Standard output.
+# Data strem 2        Standard error.
+
 # Ubuntu example:
 
 adminuser@ubuntu:~$ date | tee fulldate.txt | cut --delimiter " " --fields 1
