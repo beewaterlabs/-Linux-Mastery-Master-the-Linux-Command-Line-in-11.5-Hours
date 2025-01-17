@@ -10,3 +10,25 @@ ls /run > file2.txt
 
 3. The pipeline you used to create unsorted.txt and reversed.txt in Task 2:
 cat file1.txt file2.txt | tee unsorted.txt | sort -r unsorted.txt > reversed.txt
+
+# Submission:
+
+Task 1
+
+ls /etc > file1.txt
+
+ls /run > file2.txt
+
+Task 2
+
+cat file1.txt file2.txt | tee unsorted.txt | sort -r unsorted.txt > reversed.txt
+
+How long it Took You to Complete The Assignment in Minutes (estimate)
+
+2h:
+I wasted time with a test run on a Fedora 36 VM, using "Man" as file1.txt & "Bat" as file2.txt. Should have just used the project instructions on my Ubuntu VM, was trying to be comical (pun intended)...
+
+The sort -r option did not work, however the -d option for alphabet logic sorting worked...
+
+Once I ran through the instructions and used excel to proof list counts and order, it did not take long :)
+
