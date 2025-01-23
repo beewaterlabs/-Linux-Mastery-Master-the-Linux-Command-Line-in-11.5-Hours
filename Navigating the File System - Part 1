@@ -1,5 +1,7 @@
 #  Navigating the File System - Part 1
 
+# Navigation commands:
+
 ~           A short way of representing the current user's home directory.
 pwd         Prints the current homr directory.         
 /           Base directory. Paths that include / are absolute paths. Highest point on the file system.
@@ -12,6 +14,10 @@ ls -a       Show hidden files.
 .           Current directory.
 ..          Back a current directory.
 
+# Tab Auto Comlpletion:
+
+Single TAB        Autocompletes commands.
+Double TAB        Shows options.
 
 tron@ubuntu-dev:~$ ls -l
 total 32
@@ -34,13 +40,15 @@ Dir     Read, Write and Execute.    Group permissions, Read & Execute.    Everyo
 d       rwx                         r-x                                   r-x                                     2                        tron    tron     4096            Jan 22 10:09                Desktop 
 
 # Hard links are references to the same file in different directories.
-# A relative path is a path relative to where you currently are.
+# A relative path is a path that starts in the directory where you currently are. | tron@ubuntu-dev:/etc$ cd ../home/tron/Desktop/
+# Absolute path.                                                                  | tron@ubuntu-dev:~/Desktop$ | pwd = /home/tron/Desktop
+
 
 # Home directorty
 
 tron@ubuntu-dev:~$ cd Downloads/        Home directory.
 tron@ubuntu-dev:~/Downloads$ pwd        
-/home/tron/Downloads                    Absolute path.
+/home/tron/Downloads                    Absolute path. Full path to the desired file or utility starting from the base / directory.
 tron@ubuntu-dev:~/Downloads$            Home directory/Downloads folder. (Blue text represents path)
 
 
