@@ -1,0 +1,30 @@
+#  Navigating the File System - Part 1
+
+~           A short way of representing the current user's home directory.
+pwd         Prints the current homr directory.         
+/           Base directory. Paths that include / are absolute paths.
+ls          List contents.
+ls -F       Shows folders with / and list files as well.
+ls -l       List files and permissions. Anything that starts with a 'd' is a directory.
+
+tron@ubuntu-dev:~$ ls -l
+total 32
+drwxr-xr-x 2 tron tron 4096 Jan 22 10:09 Desktop
+drwxr-xr-x 2 tron tron 4096 Jan 22 10:09 Documents
+drwxr-xr-x 2 tron tron 4096 Jan 22 10:09 Downloads
+-rw-rw-r-- 1 tron tron    0 Jan 23 07:48 file.txt
+-rw-rw-r-- 1 tron tron    0 Jan 23 07:48 list.txt
+drwxr-xr-x 2 tron tron 4096 Jan 22 10:09 Music
+drwxr-xr-x 2 tron tron 4096 Jan 22 10:09 Pictures
+drwxr-xr-x 2 tron tron 4096 Jan 22 10:09 Public
+drwxr-xr-x 2 tron tron 4096 Jan 22 10:09 Templates
+drwxr-xr-x 2 tron tron 4096 Jan 22 10:09 Videos
+
+# Permission breakdown:
+
+drwxr-xr-x 2 tron tron 4096 Jan 22 10:09 Desktop
+
+Dir     Read, Write and Execute.    Group permissions, Read & Execute.    Everyone else, Reading an Executing.    User    Group    Size if file    When it was last edited.    Name of file or Dir.
+d       rwx                         r-x                                   r-x                                     tron    tron     4096            Jan 22 10:09                Desktop 
+
+
