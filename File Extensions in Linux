@@ -1,2 +1,98 @@
 # File Extensions in Linux
+# Ubuntu OS version: 24.04.1 LTS (Noble Numbat)
+
+file        Tells you the file type.
+
+adminuser@ubuntu:~/Desktop$ file Tux.png 
+Tux.png: PNG image data, 265 x 314, 8-bit colormap, non-interlaced
+
+# FIle header:
+
+adminuser@ubuntu:~/Desktop$ file ramones.txt 
+ramones.txt: ASCII text    <--- plain text file 
+
+adminuser@ubuntu:~/Documents$ file Ramones.ods 
+Ramones.ods: OpenDocument Spreadsheet    <--- LibreOffice Calc file.
+
+# List ls output from multiple directories:
+
+adminuser@ubuntu:~$ ls Documents/ Desktop/ Pictures/
+Desktop/:
+ramones.txt
+
+Documents/:
+Ramones.ods
+
+Pictures/:
+tux.png
+
+# Wildcards:
+# Are case sensitive
+
+*        Matches anything. This will list everything, as seen below:
+
+# Example from the /home/adminuser directory:
+
+adminuser@ubuntu:~$ ls *
+1.txt  2.txt  date.txt  file1.txt  file2.txt  fulldate.txt  reversed.txt  shortdate.txt  today.txt  unsorted.txt
+
+Desktop:
+ramones.txt
+
+Documents:
+Ramones.ods
+
+Downloads:
+
+Music:
+
+Pictures:
+tux.png
+
+Public:
+
+snap:
+firefox
+
+Templates:
+
+Videos:
+
+# Example from the home/adminuser/Desktop directory:
+
+adminuser@ubuntu:~/Desktop$ ls *
+ramones.txt
+
+ls  *.txt             Lists all files in the current directory that end with .txt
+
+ls  *.txt -lah        Display detailed information about files and directories in a human-readable format.
+
+# Examples from the /home/adminuser directory:
+
+adminuser@ubuntu:~$ ls  *.txt -lah
+-rw-rw-r-- 1 adminuser adminuser    5 Jan 16 22:34 1.txt
+-rw-rw-r-- 1 adminuser adminuser    5 Jan 16 22:35 2.txt
+-rw-rw-r-- 1 adminuser adminuser   32 Jan 16 01:00 date.txt
+-rw-rw-r-- 1 adminuser adminuser 2.4K Jan 16 20:08 file1.txt
+-rw-rw-r-- 1 adminuser adminuser  500 Jan 16 20:08 file2.txt
+-rw-rw-r-- 1 adminuser adminuser   32 Jan 16 04:09 fulldate.txt
+-rw-rw-r-- 1 adminuser adminuser 2.9K Jan 17 02:09 reversed.txt
+-rw-rw-r-- 1 adminuser adminuser    4 Jan 16 04:09 shortdate.txt
+-rw-rw-r-- 1 adminuser adminuser    4 Jan 16 02:23 today.txt
+-rw-rw-r-- 1 adminuser adminuser 2.9K Jan 17 02:09 unsorted.txt
+
+ls ?.txt        Show anything that ends with .txt that is only one character long. Useful for pattern matching.
+
+adminuser@ubuntu:~$ ls ?.txt
+1.txt  2.txt
+
+# Find files with pattern matching:
+# This pattern will match any file that starts with “file” followed by a single digit from 1 to 0 and ends with “.txt” in the current directory.
+
+adminuser@ubuntu:~$ ls file[1234567890].txt
+file1.txt  file2.txt
+
+
+
+
 
