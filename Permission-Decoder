@@ -11,5 +11,45 @@
 -             rw          r           r
 file type     user        group       others
 
+# A script that will output a given file(s) permissions:
+
+-------SOF-------
+
+#!/bin/bash
+
+# Check if a file is provided as an argument
+if [ -z "$1" ]; then
+    echo "Usage: $0 <file>"
+    exit 1
+fi
+
+file=$1
+
+# Check if the file exists
+if [ ! -f "$file" ]; then
+    echo "File does not exist: $file"
+    exit 1
+fi
+
+# Get the file permissions using ls -l
+ls -l "$file"
+
+# Alternatively, get detailed permissions using stat
+stat -c "%A %n" "$file"
+
+-------EOF-------
+
+# Example of script execution ran on an Ubuntu VM:
+
+adminuser@ubuntu:~$ sudo ./permission-decoder.sh Allman-Brothers.txt Ramones.txt 
+-rw-r--r-- 1 root root 0 Jan 30 02:09 Allman-Brothers.txt
+-rw-r--r-- Allman-Brothers.txt
+
+# You can then decode at this site, wip | may not use this site... []
+
+https://ss64.com/bash/chmod.html
+
+# I will work on integrating logic to read permissions and calculate the chmod numeric value ---> []
+
 
 
