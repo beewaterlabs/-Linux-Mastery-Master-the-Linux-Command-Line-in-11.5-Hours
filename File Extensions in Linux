@@ -92,6 +92,8 @@ adminuser@ubuntu:~$ ls ?.txt
 adminuser@ubuntu:~$ ls file[1234567890].txt
 file1.txt  file2.txt
 
+# You can combine multiple patterns in a single cmd: (13:05 | 22. Wildcards) []
+
 
 
 
