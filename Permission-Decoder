@@ -1,0 +1,15 @@
+# Permission-Decoder
+
+# Read = (r) The read permission allows users to view the contents of a file or list the contents of a directory.
+# Write = (w) The write permission allows users to modify a file's contents or add, remove, or rename files within a directory.
+# Execute = (x) The execute permission allows users to execute a file or traverse (i.e., enter) a directory. For files, execute permission is required to run the file as a program or script. For directories, execute permission is required to access the contents of the directory.
+# - = file
+# d = directory
+
+-rw-r--r--  1 root      root         0 Jan 30 02:09 Allman-Brothers.txt
+
+-             rw          r           r
+file type     user        group       others
+
+
+
