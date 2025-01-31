@@ -92,7 +92,26 @@ adminuser@ubuntu:~$ ls ?.txt
 adminuser@ubuntu:~$ ls file[1234567890].txt
 file1.txt  file2.txt
 
-# You can combine multiple patterns in a single cmd: (13:05 | 22. Wildcards) []
+tron@ubuntu-testbox:~$ ls [1234567890].txt
+1.txt  2.txt
+
+# See all .txt files, including permissions:
+
+tron@ubuntu-testbox:~$ ll *.txt
+-rw-rw-r-- 1 tron tron 0 Jan 30 23:34 1.txt
+-rw-rw-r-- 1 tron tron 0 Jan 30 23:34 2.txt
+-rw-rw-r-- 1 tron tron 0 Jan 30 23:40 aerosmith-members.txt
+-rw-rw-r-- 1 tron tron 0 Jan 30 23:36 Aerosmith.txt
+-rw-rw-r-- 1 tron tron 0 Jan 30 23:37 file1.txt
+-rw-rw-r-- 1 tron tron 0 Jan 30 23:37 file2.txt
+-rw-rw-r-- 1 tron tron 0 Jan 30 23:40 ramones-members.txt
+-rw-rw-r-- 1 tron tron 0 Jan 30 23:36 Ramones.txt
+-rw-rw-r-- 1 tron tron 0 Jan 30 23:40 zz-top-members.txt
+-rw-rw-r-- 1 tron tron 0 Jan 30 23:36 ZZ-Top.txt
+
+
+
+
 
 
 
