@@ -86,6 +86,8 @@ ls ?.txt        Show anything that ends with .txt that is only one character lon
 adminuser@ubuntu:~$ ls ?.txt
 1.txt  2.txt
 
+# You can use two ?? ---> This will find files with 2 values before the .txt
+
 # Find files with pattern matching:
 # This pattern will match any file that starts with “file” followed by a single digit from 1 to 0 and ends with “.txt” in the current directory.
 
