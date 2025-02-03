@@ -6,5 +6,10 @@ rm file*                     Remove anything that starts with file.
 rm *.jpg                     Remove anything that ends in .jpg
 rm *[2,3]*                   Remove anything with a 2 or a 3.
 
+rm -r delfolder/             Remove the delfolder recursivly 💣
 
+rm -ri delfolder             Interactive with a recursive y/n check.
+
+rmdir delfolder/*            Remove empty directories of the delfolder.
+rm -r project*               Remove the project folder and all of the contents.
 
