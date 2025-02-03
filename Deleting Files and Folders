@@ -1,0 +1,10 @@
+# Deleting Files and Folders
+
+rm filename                  Remove filename.
+rm Documents/filename        Remove file from path. You can remove mutiple files by listing absolute paths.
+rm file*                     Remove anything that starts with file.
+rm *.jpg                     Remove anything that ends in .jpg
+rm *[2,3]*                   Remove anything with a 2 or a 3.
+
+
+
