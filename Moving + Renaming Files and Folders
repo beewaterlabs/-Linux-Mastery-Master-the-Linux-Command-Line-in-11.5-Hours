@@ -1,0 +1,8 @@
+# Moving + Renaming Files and Folders
+
+mv oldname.txt newname.txt            Rename file.
+mv oldfolder/ newfolder               Rename folder.
+mv newfolder/* .                      Move folder to current dir.
+mv newfolder/* ..                     Move folder to parent dir.
+mv newfolder/ ~/Documnets/            Move folder to the home directory (~) Documents folder.
+mv ~/Documents/newfolder/ .jackpot    Move pathed folder to current dir. and rename it to jackpot.
