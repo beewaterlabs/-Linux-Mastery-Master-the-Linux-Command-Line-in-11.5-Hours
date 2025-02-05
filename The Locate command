@@ -1,0 +1,32 @@
+# The Locate command:
+
+# Install Locate on Ubuntu:
+
+sudo apt update
+sudo apt install locate
+sudo updatedb                    After installation, you need to populate the locate database for the first time:
+
+# Locate now works:
+
+locate *.conf                    Search everywhere for .conf files.
+
+tron@ubuntu-dev:~/destination$ locate -i --limit 3 *.conf
+/etc/adduser.conf
+/etc/apg.conf
+/etc/brltty.conf
+
+locate -S                        Database data.
+
+tron@ubuntu-dev:~/destination$ locate -S
+Database /var/cache/locate/locatedb is in the GNU LOCATE02 format.
+Database was last modified at 2025:02:05 09:55:34.228139433 +0000
+Locate database size: 5082331 bytes
+All Filenames: 405943
+File names have a cumulative length of 26220441 bytes.
+Of those file names,
+
+	108 contain whitespace, 
+	0 contain newline characters, 
+	and 8 contain characters with the high bit set.
+Compression ratio 80.62% (higher is better)
+
