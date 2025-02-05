@@ -1,0 +1,27 @@
+# Editing Files using Nano
+
+nano diary.txt        Create file called diary.txt
+nano -l file.txt      Opens nano with lines.
+
+# Nano commands       
+/\                    control key.
+/\ + r                Reads a file from the current dir. and injects it.
+/\ + w                Search for a word in the file. Not case sensitive.
+M - C                 "-" = ALT key, use the modify commands.
+
+/\ + \                Replace text. Goes through each instance or you can select all.
+/\ + k                Cut.
+/\ + u                Paste.
+
+# Activated the spell checker!
+
+nano /etc/nanorc      nanorc file.
+/\ + w                Search for "speller"
+
+# Uncomment thr following line:
+
+set speller "aspell -x -c"
+/\ + t then /\ s      Opens the spell checker. 
+
+/\ + c                Shows current line.
+/\ + _                Look for line.
