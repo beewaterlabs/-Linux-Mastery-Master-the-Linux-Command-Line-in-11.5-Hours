@@ -1,2 +1,11 @@
 # Copying Files and Folders
 
+cp file1.txt file2.txt                     Copy file to another file.
+cp file1.txt file2.txt destination/        Copy files to dir.
+rm file*                                   Remove everything that start with the word file.
+cp destination/* .                         Copy everything from destination to the current dir.
+cp destination/* ..                        Copy everything from destination to the parent dir.
+cp -r folder1/ destination/                Copy foler recursivly to desired directory.
+
+
+
