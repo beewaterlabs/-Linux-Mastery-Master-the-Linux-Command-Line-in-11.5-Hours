@@ -1,10 +1,10 @@
-# The Locate command:
+# The Locate command:		 Can be ran from any directory.
 
 # Install Locate on Ubuntu:
 
 sudo apt update
 sudo apt install locate
-sudo updatedb                    After installation, you need to populate the locate database for the first time:
+sudo updatedb                    After installation, you need to populate the locate database for the first time. Then updating therafter.
 
 # Locate now works:
 
@@ -29,4 +29,47 @@ Of those file names,
 	0 contain newline characters, 
 	and 8 contain characters with the high bit set.
 Compression ratio 80.62% (higher is better)
+
+# Locate command - Part 2:
+
+# Demonstration of the database not finding a file because it was not synced:
+
+touch findthis.txt		 Create a file called findthis.txt
+
+adminuser@ubuntu:~locate findthis.txt
+
+# After syncing the database ---> sudo updatedb
+
+adminuser@ubuntu:~$ locate findthis.txt 
+/home/adminuser/findthis.txt
+
+# To protect you from errors, use the options below:
+
+locate --existing		  Only entries referring to files existing at the time the locate command is run are printed.
+locate --follow			  When used with the locate command, instructs the command to follow trailing symbolic links when checking whether files exist, especially when the --existing option is specified. This means that broken symbolic links will be omitted from the output, as the command will only report on existing files.	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
