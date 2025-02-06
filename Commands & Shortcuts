@@ -1,8 +1,8 @@
 # Commands & Shortcuts
 
-CTRL + l                       		  Clear the screen.
-CTRL + d                      		  Close terminal.
-history -c; history -w  		        Clears history and writes changes to make them permanent.
+CTRL + l                            Clear the screen.
+CTRL + d                            Close terminal.
+history -c; history -w              Clears history and writes changes to make them permanent.
 !7                                  Run the 7th command in your history.
 !!                                  Run the last commnad, again.  
 !<string>                           Run the last command in your history that matches the givin string.
@@ -26,13 +26,18 @@ cal -A 1 -B 1 12 2024               Shows 1 month before and after 12 2024.
                                			CommandNames need to be on the shell's search path.
                                			Commands operate on inputs.
                                			Options modify a command's behavior.
-# More commands
+
+# More commands:
++++++++24.04.1 LTS (Noble Numbat)+++++++
+
+stat /| grep "Birth"                Outputs the OS birthdate:
+
+adminuser@ubuntu:~$ stat /| grep "Birth"
+ Birth: 2025-01-13 22:43:41.000000000 +0000
 
 cat /etc/passwd                     Show all users. This is a lot of data to parse through.
                                     Other ways to view user data ("user-to-view" & ":0" = root user):
-                                    
-+++++++24.04.1 LTS (Noble Numbat)+++++++
-                                                            
+                                                                                            
 adminuser@ubuntu:~$ cat /etc/passwd | grep ":0"              
 root:x:0:0:root:/root:/bin/bash                              
 
