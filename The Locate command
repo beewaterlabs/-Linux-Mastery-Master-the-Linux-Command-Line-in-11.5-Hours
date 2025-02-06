@@ -61,7 +61,8 @@ locate --follow *.conf
 
 # Maximun assurance:
 
-locate --existing --follow *.conf
+locate --existing --follow *.conf		You can still work if you dont have admin access to update the database / waiting for the admin to update. Similar to a GitHub local repo change without a main branch commit.
+
 
 
 
