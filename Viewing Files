@@ -35,6 +35,59 @@ you
 beautiful
 people
 
+# cat the file:
+
+adminuser@ubuntu:~/Desktop$ cat beautiful.txt 
+hello
+there
+you
+beautiful
+people
+
+# Use the tac command to show reversed output:
+
+adminuser@ubuntu:~/Desktop$ tac beautiful.txt 
+people
+beautiful
+you
+there
+hello
+
+adminuser@ubuntu:~/Desktop$ cat file[1-5].txt | tac
+people
+beautiful
+you
+there
+hello
+
+# Re-direct output to a file:
+
+adminuser@ubuntu:~/Desktop$ cat file[1-5].txt | tac > reversed.txt
+adminuser@ubuntu:~/Desktop$ cat reversed.txt 
+people
+beautiful
+you
+there
+hello
+
+# Reverse a .mp3 file:
+
+tac myfile.mp3 > myreversedfile.mp3
+
+# Reverse a file horizontaly with the rev command:
+
+cat file[1-5].txt | rev
+
+adminuser@ubuntu:~/Desktop$ cat file[1-5].txt | rev
+olleh
+ereht
+uoy
+lufituaeb
+elpoep
+
+# cat the cups-browsed.conf file:
+
+cat /etc/cups/cups-browsed.conf
 
 
 
