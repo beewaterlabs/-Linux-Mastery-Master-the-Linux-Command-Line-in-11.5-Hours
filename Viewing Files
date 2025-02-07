@@ -85,19 +85,27 @@ uoy
 lufituaeb
 elpoep
 
-# cat the cups-browsed.conf file:        Printer configuration file.
+# cat the cups-browsed.conf file:          Printer configuration file.
 
 cat /etc/cups/cups-browsed.conf
 
 # pager programs (less, more & most) there are others as well):
-# less                                   Saves you from having a load of text filling up your screen.
+# less                                     Saves you from having a load of text filling up your screen.
 
-less /etc/cups/cups-browsed.conf         View file starting at the top with a scroll option.
+less /etc/cups/cups-browsed.conf           View file starting at the top with a scroll option.
 
-cat /etc/cups/cups-browsed.conf | less   Same result as above.
-find | less                              If you | (pipe) find into less, you can now scroll!
+cat /etc/cups/cups-browsed.conf | less     Same result as above.
+find | less                                If you | (pipe) find into less, you can now scroll!
 
-# head                                   The head command will allow you to see a little piece of the file, starting at the top, or the head, of the file.
+# head                                     The head command will allow you to see a little piece of the file, starting at the top, or the head, of the file.
+                                           Default = first 10 lines of the file.
+# Use the -n option to indicate <x> lines.
+
+cat file[1-5].txt | head -n 2              
+
+tron@ubuntu-dev:~/Desktop$ cat file[1-5].txt | head -n 2
+hello
+there
 
 
 
