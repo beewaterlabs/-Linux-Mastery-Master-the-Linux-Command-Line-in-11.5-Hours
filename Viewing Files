@@ -224,8 +224,12 @@ head -n 20 /etc/cups/cups-browsed.conf | tail -n 20
 # LogDir /var/log/cups-browsed
 
 # find command show the last 3 lines of the find outout:
-find | tail -n 3
 
+find | tail -n 3
+tron@ubuntu-dev:~$ find | tail -n 3
+./.ssh/authorized_keys
+./.sudo_as_admin_successful
+./Music
 
 # Redirecting / creating a file the output:
 find | tail -n 3 > ~/Desktop/export-[find_|_tail_-n_3].txt
