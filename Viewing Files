@@ -107,6 +107,93 @@ tron@ubuntu-dev:~/Desktop$ cat file[1-5].txt | head -n 2
 hello
 there
 
+# Piping find to the head commanad:
+
+find | head -n 5
+
+tron@ubuntu-dev:~/Desktop$ find | head -n 5
+.
+./file3.txt
+./file1.txt
+./file2.txt
+./file4.txt
+
+find | less -n 5
+
+# Dealing with large files:
+# You can see the line count of a file by using the wc -l command.
+
+tron@ubuntu-dev:~/Desktop$ cat /etc/cups/cups-browsed.conf | wc -l
+747
+
+# Confirm head will count 20 lines:
+
+tron@ubuntu-dev:~/Desktop$ head -n 20 /etc/cups/cups-browsed.conf | wc -l
+20
+
+# Output from the /\ command:
+
+tron@ubuntu-dev:~/Desktop$ head -n 20 /etc/cups/cups-browsed.conf
+
+# Start of output:
+# All configuration options described here can also be supplied on the
+# command line of cups-browsed via the "-o" option. In case of
+# contradicting settings the setting defined in the configuration file
+# will get used.
+
+# Unknown directives are ignored, also unknown values.
+
+
+# Where should cups-browsed save information about the print queues it had
+# generated when shutting down, like whether one of these queues was the
+# default printer, or default option settings of the queues?
+
+# CacheDir /var/cache/cups-browsed
+
+
+# Where should cups-browsed create its debug log file (if "DebugLogging file"
+# is set)?
+
+# LogDir /var/log/cups-browsed
+# End of output.
+
+# tail command        Works like the head command, displays the last 20 lines:
+
+tron@ubuntu-dev:~/Desktop$ tail -n 20 /etc/cups/cups-browsed.conf | wc -l
+20
+tron@ubuntu-dev:~/Desktop$ tail -n 20 /etc/cups/cups-browsed.conf
+# on the size of the file.
+
+# Start of output:
+# DebugLogFileSize 300
+
+# NotifLeaseDuration defines how long the D-BUS subscription created by cups-browsed
+# in cupsd will last before cupsd cancels it. The default value is 1 day
+# in seconds - 86400. The subscription renewal is set to happen after half of
+# NotifLeaseDuration passed. The D-BUS notifications are used for watching over queues
+# and doing specific actions when a D-BUS notification comes.
+
+# NotifLeaseDuration 86400
+
+# FrequentNetifUpdate turns on/off the network interface update routines
+# which happen for each found entry, which can slow up cups-browsed significantly
+# if we are on a network with many shared printers or if we use BrowsePoll to a server
+# with many queues. Network interface updates after receiving D-BUS notification
+# from NetworkManager won't be turned off with the directive. The default value
+# is 'Yes'.
+#
+# FrequentNetifUpdate Yes
+# End of output.
+
+# cat a file and | to the tail command:
+
+tron@ubuntu-dev:~/Desktop$ cat file[1-5].txt | tail -n 2
+beautiful
+people
+
+
+
+
 
 
 
