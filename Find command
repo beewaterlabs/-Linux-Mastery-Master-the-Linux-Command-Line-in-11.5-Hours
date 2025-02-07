@@ -13,15 +13,43 @@ adminuser@ubuntu:~/Documents$ find
 ./level2/level3/level4/level5/5.txt
 ./level2/2.txt
 
-find .                  Find from the current directory.
+find .                  Find from the current directory, displays the entire file tree.
 
-find . -maxdepth 1      Shows level 1 contents. 
+# maxdepth option:      find . -maxdepth <number>   
+                        Shows level <number> contents, more examples below:
 
 adminuser@ubuntu:~/Documents$ find . -maxdepth 1
 .
 ./level2
-
-find . -maxdepth 2      Shows level 2 contents.
-
-# Placeholder: 35. The Find Command - Part 2 | 3:07 | [...]
+adminuser@ubuntu:~/Documents$ find . -maxdepth 2
+.
+./level2
+./level2/level3
+./level2/2.txt
+adminuser@ubuntu:~/Documents$ find . -maxdepth 3
+.
+./level2
+./level2/level3
+./level2/level3/3.txt
+./level2/level3/level4
+./level2/2.txt
+adminuser@ubuntu:~/Documents$ find . -maxdepth 4
+.
+./level2
+./level2/level3
+./level2/level3/3.txt
+./level2/level3/level4
+./level2/level3/level4/4.txt
+./level2/level3/level4/level5
+./level2/2.txt
+adminuser@ubuntu:~/Documents$ find . -maxdepth 5
+.
+./level2
+./level2/level3
+./level2/level3/3.txt
+./level2/level3/level4
+./level2/level3/level4/4.txt
+./level2/level3/level4/level5
+./level2/level3/level4/level5/5.txt
+./level2/2.txt
 
