@@ -1,2 +1,41 @@
 # Viewing Files
 
+dminuser@ubuntu:~/Desktop$ cat file1.txt 
+hello
+adminuser@ubuntu:~/Desktop$ cat file2.txt 
+there
+adminuser@ubuntu:~/Desktop$ cat file3.txt 
+you
+adminuser@ubuntu:~/Desktop$ cat file4.txt 
+beautiful
+adminuser@ubuntu:~/Desktop$ cat file5.txt 
+people
+
+# Cat (CONCATENATE)
+
+adminuser@ubuntu:~/Desktop$ cat file1.txt file2.txt file3.txt file4.txt file5.txt 
+hello
+there
+you
+beautiful
+people
+
+# Redirect to beautiful.txt:
+
+adminuser@ubuntu:~/Desktop$ cat file1.txt file2.txt file3.txt file4.txt file5.txt > beautiful.txt
+
+# Using cat to shorten the command:
+
+cat file[1-5].txt > beautiful.txt
+
+adminuser@ubuntu:~/Desktop$ cat beautiful.txt 
+hello
+there
+you
+beautiful
+people
+
+
+
+
+
