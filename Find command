@@ -68,7 +68,7 @@ adminuser@ubuntu:~/Documents$ find . -type d
 ./level2/level3/level4
 ./level2/level3/level4/level5
 
-# Can be combined with the -maxdepth option:        You can view each level by indicating the -maxdepth <level-nummber>
+# Can be combined with the -maxdepth option:                You can view each level by indicating the -maxdepth <level-nummber>
 
 
 adminuser@ubuntu:~/Documents$ find . -maxdepth 5 -type d
@@ -258,20 +258,38 @@ sudo find / -maxdepth 3 -type f -size +100k -size -5M -ok cp {} ~/Desktop/copy_h
 adminuser@ubuntu:~/Desktop$ sudo find / -maxdepth 3 -type f -size +100k -size -5M -ok cp {} ~/Desktop/copy_here \;
 < cp ... /etc/lvm/lvm.conf > ?
 
-# Challenge 1                                            Create 500 folders in the haystack directory using brace expansion.
+# Challenge 1                                                          Create 500 folders in the haystack directory using brace expansion.
 
 mkdir haystack/folder{1..500}                    
 
-# Challenge 2                                            Create 100 files in each of the 500 folders.
+# Challenge 2                                                          Use brace expansion to create 100 files in each of the 500 folders.
 
-touch haystack/folder{1..500}/file{1..100}               Brace expamsion to create 100 files in the called out folders.
+touch haystack/folder{1..500}/file{1..100}               
 
-# Challenge 3                                            Find needle in the haystack.
+# Challenge 3                                                          Find the needle in the haystack.
 
-touch haystack/folder$(shuf -i 1-500 -n 1)/needle.txt    Creates the needle.
+touch haystack/folder$(shuf -i 1-500 -n 1)/needle.txt                  Creates the needle.
+
+find haystack/ -type f -name "needle.txt"                              Finds the needle = 👻
+haystack/folder284/needle.txt
+
+# You can move the needle by file name:
+
+find haystack/ -type f -name "needle.txt" -exec mv {} ~/Desktop \;    Finds and moves the needle to the indicated directory.
+
+adminuser@ubuntu:~/Desktop$ find haystack/ -type f -name "needle.txt" -exec mv {} ~/Desktop \;
+adminuser@ubuntu:~/Desktop$ ll
+total 32
+drwxr-xr-x   4 adminuser adminuser  4096 Feb  7 02:40 ./
+drwxr-x---  14 adminuser adminuser  4096 Feb  6 23:14 ../
+drwxrwxr-x   2 adminuser adminuser  4096 Feb  7 01:51 copy_here/
+drwxrwxr-x 502 adminuser adminuser 20480 Feb  7 02:16 haystack/
+-rw-rw-r--   1 adminuser adminuser     0 Feb  7 02:28 needle.txt
+
+# Summary:
+# The fiind command can be used to execute sophisticated search tasks.
+# man find ----> Other options.
 
 
 
-
-               
 
