@@ -260,9 +260,12 @@ adminuser@ubuntu:~/Desktop$ sudo find / -maxdepth 3 -type f -size +100k -size -5
 
 # Challenge 1
 
-mkdir haystack/folder{1..500}          Create 500 folders in the haystack directory using brace expansion.
+mkdir haystack/folder{1..500}                    Create 500 folders in the haystack directory using brace expansion.
 
-# Challenge 2                          Create 100 files in each of the 500 folders.
+# Challenge 2                                    Create 100 files in each of the 500 folders.
 
-touch haystack/file1..100}
+touch haystack/folder{1..500}/file{1..100}       Brace expamsion to create 100 files in the called out folders.
+
+
+               
 
