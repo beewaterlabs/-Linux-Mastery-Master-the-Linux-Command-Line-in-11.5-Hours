@@ -232,4 +232,4 @@ tron@ubuntu-dev:~$ find | tail -n 3
 ./Music
 
 # Redirecting / creating a file the output:
-find | tail -n 3 > ~/Desktop/export-[find_|_tail_-n_3].txt
+find | tail -n 3 > ~/Desktop/export-find_pipe_tail_-n_3.txt
