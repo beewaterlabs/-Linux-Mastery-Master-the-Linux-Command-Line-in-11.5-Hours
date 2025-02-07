@@ -258,13 +258,19 @@ sudo find / -maxdepth 3 -type f -size +100k -size -5M -ok cp {} ~/Desktop/copy_h
 adminuser@ubuntu:~/Desktop$ sudo find / -maxdepth 3 -type f -size +100k -size -5M -ok cp {} ~/Desktop/copy_here \;
 < cp ... /etc/lvm/lvm.conf > ?
 
-# Challenge 1
+# Challenge 1                                            Create 500 folders in the haystack directory using brace expansion.
 
-mkdir haystack/folder{1..500}                    Create 500 folders in the haystack directory using brace expansion.
+mkdir haystack/folder{1..500}                    
 
-# Challenge 2                                    Create 100 files in each of the 500 folders.
+# Challenge 2                                            Create 100 files in each of the 500 folders.
 
-touch haystack/folder{1..500}/file{1..100}       Brace expamsion to create 100 files in the called out folders.
+touch haystack/folder{1..500}/file{1..100}               Brace expamsion to create 100 files in the called out folders.
+
+# Challenge 3                                            Find needle in the haystack.
+
+touch haystack/folder$(shuf -i 1-500 -n 1)/needle.txt    Creates the needle.
+
+
 
 
                
