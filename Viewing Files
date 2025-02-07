@@ -97,8 +97,16 @@ less /etc/cups/cups-browsed.conf           View file starting at the top with a 
 cat /etc/cups/cups-browsed.conf | less     Same result as above.
 find | less                                If you | (pipe) find into less, you can now scroll!
 
+# Filters:
+# cat: Displays the text of a file line by line.
+# head: Displays the first n lines of specified text files.
+# tail: Returns lines from bottom to top, similar to head but in reverse order.
+# sort: Sorts lines alphabetically by default, with various options to modify sorting.
+# uniq: Removes duplicate lines.
+
 # head                                     The head command will allow you to see a little piece of the file, starting at the top, or the head, of the file.
                                            Default = first 10 lines of the file.
+
 # Use the -n option to indicate <x> lines.
 
 cat file[1-5].txt | head -n 2              
@@ -190,6 +198,38 @@ tron@ubuntu-dev:~/Desktop$ tail -n 20 /etc/cups/cups-browsed.conf
 tron@ubuntu-dev:~/Desktop$ cat file[1-5].txt | tail -n 2
 beautiful
 people
+
+# Get the first 20 lines and last 20 lines of a file:
+
+head -n 20 /etc/cups/cups-browsed.conf | tail -n 20
+
+# All configuration options described here can also be supplied on the
+# command line of cups-browsed via the "-o" option. In case of
+# contradicting settings the setting defined in the configuration file
+# will get used.
+
+# Unknown directives are ignored, also unknown values.
+
+
+# Where should cups-browsed save information about the print queues it had
+# generated when shutting down, like whether one of these queues was the
+# default printer, or default option settings of the queues?
+
+# CacheDir /var/cache/cups-browsed
+
+
+# Where should cups-browsed create its debug log file (if "DebugLogging file"
+# is set)?
+
+# LogDir /var/log/cups-browsed
+
+# find command show the last 3 lines of the find outout:
+find | tail -n 3
+
+
+# Redirecting / creating a file the output:
+find | tail -n 3 > ~/Desktop/export-[find_|_tail_-n_3].txt
+
 
 
 
