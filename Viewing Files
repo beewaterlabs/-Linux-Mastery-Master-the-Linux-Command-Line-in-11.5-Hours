@@ -229,15 +229,3 @@ find | tail -n 3
 
 # Redirecting / creating a file the output:
 find | tail -n 3 > ~/Desktop/export-[find_|_tail_-n_3].txt
-
-
-
-
-
-
-
-
-
-
-
-
