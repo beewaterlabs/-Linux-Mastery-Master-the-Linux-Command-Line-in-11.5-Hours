@@ -195,6 +195,65 @@ adminuser@ubuntu:~/Documents$ find . -name "*.txt"        Find anythig with a .t
 ./level2/level3/level4/level5/5.txt
 ./level2/2.txt
 
+# Find with -iname option                                 Case insensitive search.
+
+adminuser@ubuntu:~/Documents$ find . -maxdepth 10 -iname "?.TXT"
+./level2/level3/3.txt
+./level2/level3/level4/4.txt
+./level2/level3/level4/level5/5.txt
+./level2/2.txt
+
+# Find command -size option                               Size search.
+
+sudo find / -type f -size +100k
+
+# You can pipe the command to use the word count option
+# along with the long option to count the results.
+# wc -l
+
+adminuser@ubuntu:~/Documents$ sudo find / -type f -size +100k | wc -l
+find: ‘/proc/4973/task/4973/fdinfo/6’: No such file or directory
+find: ‘/proc/4973/fdinfo/5’: No such file or directory
+find: ‘/run/user/1000/gvfs’: Permission denied
+find: ‘/run/user/1000/doc’: Permission denied
+7769
+
+# You can search for sizes by an indicated range:
+
+adminuser@ubuntu:~/Documents$ sudo find / -type f -size +100k -size -5M | wc -l
+find: ‘/proc/4997/task/4997/fdinfo/6’: No such file or directory
+find: ‘/proc/4997/fdinfo/5’: No such file or directory
+find: ‘/run/user/1000/gvfs’: Permission denied
+find: ‘/run/user/1000/doc’: Permission denied
+7390
+
+# Search for files less than 100k and greater than 5M:
+
+dminuser@ubuntu:~/Documents$ sudo find / -type f -size -100k -o -size +5M | wc -l
+find: ‘/proc/5010/task/5010/fd/6’: No such file or directory
+find: ‘/proc/5010/task/5010/fdinfo/6’: No such file or directory
+find: ‘/proc/5010/fd/5’: No such file or directory
+find: ‘/proc/5010/fdinfo/5’: No such file or directory
+find: ‘/run/user/1000/gvfs’: Permission denied
+find: ‘/run/user/1000/doc’: Permission denied
+368352
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
