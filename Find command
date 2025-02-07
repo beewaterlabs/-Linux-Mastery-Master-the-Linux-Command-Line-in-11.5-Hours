@@ -258,5 +258,11 @@ sudo find / -maxdepth 3 -type f -size +100k -size -5M -ok cp {} ~/Desktop/copy_h
 adminuser@ubuntu:~/Desktop$ sudo find / -maxdepth 3 -type f -size +100k -size -5M -ok cp {} ~/Desktop/copy_here \;
 < cp ... /etc/lvm/lvm.conf > ?
 
+# Challenge 1
 
+mkdir haystack/folder{1..500}          Create 500 folders in the haystack directory using brace expansion.
+
+# Challenge 2                          Create 100 files in each of the 500 folders.
+
+touch haystack/file1..100}
 
