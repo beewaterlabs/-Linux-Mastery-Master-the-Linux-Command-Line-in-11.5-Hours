@@ -227,7 +227,7 @@ find: ‘/run/user/1000/gvfs’: Permission denied
 find: ‘/run/user/1000/doc’: Permission denied
 7390
 
-# Search for files less than 100k and greater than 5M:
+# Find files less than 100k and greater than 5M:
 
 dminuser@ubuntu:~/Documents$ sudo find / -type f -size -100k -o -size +5M | wc -l
 find: ‘/proc/5010/task/5010/fd/6’: No such file or directory
@@ -237,6 +237,30 @@ find: ‘/proc/5010/fdinfo/5’: No such file or directory
 find: ‘/run/user/1000/gvfs’: Permission denied
 find: ‘/run/user/1000/doc’: Permission denied
 368352
+
+# Find files greater than 100k and less than 5M: 
+
+adminuser@ubuntu:~/Desktop$ sudo find / -type f -size +100k -size -5M | wc -l
+find: ‘/proc/5048/task/5048/fdinfo/6’: No such file or directory
+find: ‘/proc/5048/fdinfo/5’: No such file or directory
+find: ‘/run/user/1000/gvfs’: Permission denied
+find: ‘/run/user/1000/doc’: Permission denied
+7390
+
+# You can copy the output to an indicated directory with the -exec cp {} ~/Directory/path and ending the command with a \;
+
+sudo find / -type f -size +100k -size -5M -exec cp {} ~/Desktop/copy_here \;
+
+# You can have the terminla ask berfore each cp with the -ok command:
+
+sudo find / -maxdepth 3 -type f -size +100k -size -5M -ok cp {} ~/Desktop/copy_here \;
+
+adminuser@ubuntu:~/Desktop$ sudo find / -maxdepth 3 -type f -size +100k -size -5M -ok cp {} ~/Desktop/copy_here \;
+< cp ... /etc/lvm/lvm.conf > ?
+
+
+
+
 
 
 
