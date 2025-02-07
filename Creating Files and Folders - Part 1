@@ -13,7 +13,7 @@ mkdir -p ramones/tour/2025      Create a directory path.
 
 mkdir {jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec}_{2025,2026,2027,2028,2029,2030}
 mkdir {jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec}_{2025..2028}                            .. will save time and <-> bridge the number gap.
-mkdir {jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec}_{2025..2028}/file{1..31                 Brace expamsion to create 31 files in the called out folders.
+mkdir {jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec}_{2025..2028}/file{1..31}                Brace expamsion to create 31 files in the called out folders.
 mkdir haystack/folder{1..500}                                                                   Create 500 folders in the haystack directory.
 ls {jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec}_{2025..2028}                               Brace expansion can be used accross the entire shell. 👻
 ls {jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec}_{2025..2028} > out.txt                     Send listed content of 72 folders to a file called out.txt.  
