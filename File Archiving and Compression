@@ -1,1 +1,41 @@
-$ File Archiving and Compression
+# File Archiving and Compression
+# A bag for apples from a grocery store = analogy for tarball.
+
+# tar command        Compress files by creating a tarball.
+# tar options:
+
+-c        Create a new archive.
+-v        Verbose / get feedback.
+-f        Accept files.
+
+-t        Test label.
+
+# Create a tarball:
+
+tar -cvf ourarchive.tar file[1-3].txt
+
+# List in long form only .tar files from the current directory.
+
+ls -l | grep .tar
+-rw-rw-r--  1 tron tron 10240 Feb  8 11:31 ourarchive.tar
+
+# To see what kind of file:
+
+file ourarchive.tar 
+ourarchive.tar: POSIX tar archive (GNU)
+
+# To look at a tarball's contents without having to extract it.
+
+tar -tf ourarchive.tar 
+
+file1.txt
+file2.txt
+file3.txt
+
+
+
+
+
+
+
+
