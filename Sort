@@ -1,3 +1,18 @@
-# Sort
+# Sort        
+# By default returns A-Z output.
+
+# You can use the -r option to sort in reverse. If you want to scroll with your keyboard pipe to the less command.
+
+sort -r words.txt | less
+
+# To sort numbers, use the -n option:
+
+sort -n numbers.txt | less
+
+# To remove duplicate numbers, use the -u (unique) option.
+
+sort -u numbers0-9.txt | less
+
+# Sort the results of ls -l, then piping it to the head command to see the top 20 lines, then piping to the sort command with the -k option for column, selecting the 5th column with the n option for smallest to largest.
 
 
