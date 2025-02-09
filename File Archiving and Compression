@@ -35,8 +35,12 @@ file3.txt
 # Compression is a 2 step process: 1 --> create .tar ; 2 --> compress .tar with tool of choice (xz is worth looking into).
 # Compression algorithms:
 
-gzip        Faster, less compression power.
-bzip2       Compress files to a smaller size, requires more computational time.
+gzip        Faster, less compression power. Add z to your your tar file command, shown below.
+gunzip
+
+bzip2       Compress files to a smaller size, requires more computational time, use .bz2 file extension.
+bunzip
+# bzip tar command: Add j to tar command --> tar -xvjf ourarchive.tar.bz2
 
 # To compress using gzip:
 
@@ -70,10 +74,16 @@ tar -cvzf ourarchive.tar.gz file[1-3].txt
 file ourarchive.tar.gz 
 ourarchive.tar.gz: gzip compressed data, from Unix
 
+# Extract gzip file while keeping the "ourarchive.tar.g" file:
+
+tar -xvzf ourarchive.tar.gz 
+file1.txt
+file2.txt
+file3.txt
 
 
-file ourarchive.tar.gz 
-ourarchive.tar.gz: gzip compressed data, from Unix
+
+
 
 
 
