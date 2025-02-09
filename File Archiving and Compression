@@ -32,8 +32,48 @@ file1.txt
 file2.txt
 file3.txt
 
+# Compression is a 2 step process: 1 --> create .tar ; 2 --> compress .tar with tool of choice (xz is worth looking into).
+# Compression algorithms:
+
+gzip        Faster, less compression power.
+bzip2       Compress files to a smaller size, requires more computational time.
+
+# To compress using gzip:
+
+gzip ourarchive.tar
+
+# Now you can grep for .gz to see the .tar archive after gzip compression:
+
+ls | grep .gz
+ourarchive.tar.gz
+
+# To view the nature of the file:
+
+file ourarchive.tar.gz 
+ourarchive.tar.gz: gzip compressed data, was "ourarchive.tar", last modified: Sat Feb  8 11:31:08 2025
+
+# To get the tarball file back, gunzip:
+
+gunzip ourarchive.tar.gz
+
+# Now you can work with the .tar file again:
+
+ls | grep .tar
+ourarchive.tar
+
+# To create a tar file and compress it with gzip in one command:
+
+tar -cvzf ourarchive.tar.gz file[1-3].txt
+
+# To view the nature of the file, notice there is no "was" data:
+
+file ourarchive.tar.gz 
+ourarchive.tar.gz: gzip compressed data, from Unix
 
 
+
+file ourarchive.tar.gz 
+ourarchive.tar.gz: gzip compressed data, from Unix
 
 
 
