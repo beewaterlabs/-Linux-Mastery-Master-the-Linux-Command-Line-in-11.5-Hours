@@ -38,10 +38,10 @@ cd ~/Desktop/magic
 touch file{1..100}
 ls -lh  ~/Desktop/magic >  ~/Desktop/magic.log
 
-# This bash script will use the tar command, options listed below.
+# This "backup.sh" bash script will use the tar command, options listed below.
 # c = create file, v = verbose information, z = gzip format, f = next entry in the command is the tarball archive file.
 # You can remove verbose output if desired.
-# This bash script will create a tarball archive file called "backup.tar.gz" using the gzip compression algorithm 
+# This bash script will create a tarball archive file called "backup.tar.gz" in the ~/Desktop dir. using the gzip compression algorithm 
 # to store everything from the listed directories/folders of the home dir.
 # To get rid of this standard error message --> tar: Removing leading `/' from member names
 # You can redirect the standard error output to the bitbucket (place on a file system deletes everything sent to it),
@@ -49,7 +49,45 @@ ls -lh  ~/Desktop/magic >  ~/Desktop/magic.log
 
 #!/bin/bash
 
-tar -cvzf backup.tar.gz ~/{Documents,Downloads,Pictures,Videos} 2>/dev/null
+tar -cvzf ~/Desktop/backup.tar.gz ~/{Documents,Downloads,Pictures,Videos} 2>/dev/null
+
+# Before adding "2>/dev/null": 
+
+tron@ubuntu-dev:~$ bash backup.sh 
+tar: Removing leading `/' from member names
+/home/tron/Documents/
+/home/tron/Downloads/
+/home/tron/Pictures/
+/home/tron/Videos/
+
+# After:
+
+tron@ubuntu-dev:~$ bash backup.sh 
+/home/tron/Documents/
+/home/tron/Downloads/
+/home/tron/Pictures/
+/home/tron/Videos/
+
+# We are currently using bash scriptname.sh
+# To change this go to the ~/ home dir. A shortcut is "cd" which will take you to your home dir.
+# Make a dir. called "bin" and mv your .sh scripts there.
+# Now you can rename "backup.sh" to "backup" or any other .sh scripts you wish to remove the .sh from...
+# When the shell says it can't find something, that means it's not in the shells's search path.      
+# We need to edit the shell's search path to include our recently created "bin" directory.
+# From the ~/ edit the .bashrc shell configuration file:
+
+nano .bashrc
+
+# Add the following at the end of the shell configuration file:
+
+PATH="$PATH:$HOME/bin"
+
+
+# You can now run the "backup" script by typing "backup"
+
+
+
+
 
 
 
