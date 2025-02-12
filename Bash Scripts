@@ -39,11 +39,18 @@ touch file{1..100}
 ls -lh  ~/Desktop/magic >  ~/Desktop/magic.log
 
 # This bash script will use the tar command, options listed below.
-# c -> create file, v -> verbose information, z -> gzip format, f -> next entry in the command is the archive file.
+# c = create file, v = verbose information, z = gzip format, f = next entry in the command is the tarball archive file.
 # You can remove verbose output if desired.
-# This bash script will create a "backup.tar.gz" gzip file that 
+# This bash script will create a tarball archive file called "backup.tar.gz" using the gzip compression algorithm 
+# to store everything from the listed directories/folders of the home dir.
+# To get rid of this standard error message --> tar: Removing leading `/' from member names
+# You can redirect the standard error output to the bitbucket (place on a file system deletes everything sent to it),
+# called "/dev/null" by adding "2>/dev/null" to the end of the command.
+
 #!/bin/bash
 
-tar -cvzf backup.tar.gz ~/{Documents,Downloads,Pictures,Videos}
+tar -cvzf backup.tar.gz ~/{Documents,Downloads,Pictures,Videos} 2>/dev/null
+
+
 
 
