@@ -28,4 +28,22 @@ which python3
 file our_script.sh
 our_script.sh: Python script, ASCII text executable
 
+# This bash script will make the "magic" dir. in the users home directory, change into that directory and create 100 files.
+# Then list in long form human readable format the contents of the "magic" directory and redirect it to a file called "magic.log"
+
+#!/bin/bash
+
+mkdir ~/Desktop/magic
+cd ~/Desktop/magic
+touch file{1..100}
+ls -lh  ~/Desktop/magic >  ~/Desktop/magic.log
+
+# This bash script will use the tar command, options listed below.
+# c -> create file, v -> verbose information, z -> gzip format, f -> next entry in the command is the archive file.
+# You can remove verbose output if desired.
+# This bash script will create a "backup.tar.gz" gzip file that 
+#!/bin/bash
+
+tar -cvzf backup.tar.gz ~/{Documents,Downloads,Pictures,Videos}
+
 
