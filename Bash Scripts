@@ -72,6 +72,8 @@ tron@ubuntu-dev:~$ bash backup.sh
 # To change this go to the ~/ home dir. A shortcut is "cd" which will take you to your home dir.
 # Make a dir. called "bin" and mv your .sh scripts there.
 # Now you can rename "backup.sh" to "backup" or any other .sh scripts you wish to remove the .sh from...
+## I'm not sure why you would want to remove the .sh, will add reasons opportunistically:[]
+
 # When the shell says it can't find something, that means it's not in the shells's search path.      
 # We need to edit the shell's search path to include our recently created "bin" directory.
 # From the ~/ edit the .bashrc shell configuration file:
@@ -83,11 +85,14 @@ nano .bashrc
 PATH="$PATH:$HOME/bin"
 
 # After editing, close the termial and open a new one.
-# To see the path has been updated, run the following command:
+# To see the path has been updated to include "/home/adminuser/bin", run the following command:
 
 echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/adminuser/bin
 
-# You can now run the "backup" script by typing "backup"
+# You can now run the previously named "backup.sh" script by typing "backup"
+
+
 
 # 9:02 VID PAUSE
 
