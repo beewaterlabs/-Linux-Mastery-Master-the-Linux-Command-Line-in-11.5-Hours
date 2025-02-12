@@ -1,0 +1,31 @@
+# Creating Bash Scripts:
+
+Create a .sh bash script file:
+
+nano -l our_script.sh        The -l option open the editor with line numbers.
+vi our_script.sh             Once in vi editor, for line numbers tpye ---> :set nu
+
+# Start your bash script with the following as your first line:
+
+#!/bin/bash
+
+# Once you save the file, you can run the file command to see the filetype:
+
+file our_script.sh
+our_script.sh: Bourne-Again shell script, ASCII text executable
+
+# Find the path to your python3 interpreter using the which command:
+
+which python3        
+/usr/bin/python3
+
+# If you want to create a python script, use the python3 interpreter as your first line:
+
+#!/usr/bin/python3
+
+# Once you save the file, you can now see the filetype is python script:
+
+file our_script.sh
+our_script.sh: Python script, ASCII text executable
+
+
