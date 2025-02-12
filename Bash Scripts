@@ -82,6 +82,10 @@ nano .bashrc
 
 PATH="$PATH:$HOME/bin"
 
+# After editing, close the termial and open a new one.
+# To see the path has been updated, run the following command:
+
+echo $PATH
 
 # You can now run the "backup" script by typing "backup"
 
