@@ -1,10 +1,17 @@
-# The GNU Project
+# The GNU Project             
 
-# GNU                        Unix-like operating system with a free software philosophy. It lacked a fully developed kernel.
 # "GNU's Not Unix"           A recursive acronym created by Richard Stallman for the GNU Project.
-# Richard Stallman           Creator.
+# GNU                        Unix-like operating system with a free software philosophy. It lacked a fully developed kernel.
 
-# Linus Torvalds             Linus Torvalds created the Linux kernel in 1991. It was released under the GNU General Public License (GPLv2) in 1992, The GPLv2 ensures the kernel remains free and open source.
+# Free software gives users 4 freedoms:
+0. These freedoms are provided legally using the GNU Public License (GPL)
+1. The freedom to run the program as you wish, for any purpose.
+2. The freedom to study how the program works, and change it so it does your computing as you wish. Access to the source code is a precondition for this.
+3. The freedom to redistribute copies so you can help others.
+4. The freedom to distribute copies of your modified versions to others. By doing this, you can give the whole community a chance to benefit from your changes.
+
+# Richard Stallman           Creator. Began development of the GNU operating system in 1983 👾
+# Linus Torvalds             Linus Torvalds created the Linux kernel in 1991. It was released under the GNU General Public License (GPLv2.0) in 1992, The GPLv2 ensures the kernel remains free and open source.
 
 # Combination of both = GNU/Linux or the GNU Linux Operating System
 # This combines the GNU system tools and utilities with the Linux kernel to create a complete operating system.
@@ -13,4 +20,17 @@
 # If you uss the uname command with the -o option, you will see:
 
 GNU/Linux
+
+# gnu.org/software/software.html
+# The "All GNU packages" section -->  List links to the home pages of all current GNU packages (every bit of code that is run GNU system)
+# GNU packages:
+
+linux-libre    Free software version of the linux kernel. Contains all the source code for the linux kernel. 
+coreutils      For all commands ran so far - ls, grep, find, locate, etc.
+
+
+
+
+
+
 
