@@ -1,6 +1,6 @@
 # Creating Bash Scripts:
 
-Create a .sh bash script file:
+# Create a .sh bash script file:
 
 nano -l our_script.sh        The -l option open the editor with line numbers.
 vi our_script.sh             Once in vi editor, for line numbers tpye ---> :set nu
@@ -27,6 +27,10 @@ which python3
 
 file our_script.sh
 our_script.sh: Python script, ASCII text executable
+
+# Make your script(s) executable by using the chmod command:
+
+chmod +x <scriptname.sh or scriptname.py>
 
 # This bash script will make the "magic" dir. in the users home directory, change into that directory and create 100 files.
 # Then list in long form human readable format the contents of the "magic" directory and redirect it to a file called "magic.log"
