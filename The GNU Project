@@ -1,0 +1,16 @@
+# The GNU Project
+
+# GNU                        Unix-like operating system with a free software philosophy. It lacked a fully developed kernel.
+# "GNU's Not Unix"           A recursive acronym created by Richard Stallman for the GNU Project.
+# Richard Stallman           Creator.
+
+# Linus Torvalds             Linus Torvalds created the Linux kernel in 1991. It was released under the GNU General Public License (GPLv2) in 1992, The GPLv2 ensures the kernel remains free and open source.
+
+# Combination of both = GNU/Linux or the GNU Linux Operating System
+# This combines the GNU system tools and utilities with the Linux kernel to create a complete operating system.
+
+# To give credit to GNU, some folks think it should be called GNU Linux.
+# If you uss the uname command with the -o option, you will see:
+
+GNU/Linux
+
