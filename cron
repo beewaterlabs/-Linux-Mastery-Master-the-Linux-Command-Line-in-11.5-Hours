@@ -105,6 +105,52 @@ Hello World
 
   59            23      *         JAN,DEC       SUN       echo "Jan-Dec-1-min-to-midnight-checkin" >> ~/Desktop/Jan-Dec-2359-checkin.txt
 
+# Backup script for automation with crontab, using our ~/bin directory as it's path is added to the end of the ~/.bashrc bash shell configuration file: PATH="$PATH:$HOME/bin
+# Why: By using ~/bin to save .sh scripts, you can drop the .sh from the end of the file and still run your script + you can run your script from anywhere in the filesystem.
+
+tron@ubuntu-dev:~/bin$ cat backup 
+#!/bin/bash
+
+tar -cvzf ~/Desktop/backups/backup.tar.gz ~/{Documents,Downloads,Pictures,Videos} 2>/dev/null
+date >> ~/Desktop/backups/backup.log
+
+# Scheduling your "backup" script via crontab -e:
+
+# m        h       dom     mon     dow     command
+
+  30       9       *       *       THU     bash ~/bin/backup
+
+# Before cron job runs:
+
+tron@ubuntu-dev:~/Desktop/backups$ ls
+0 files
+
+# After, we should have a tarball file made with gzip and a backup.log file that will record the date/timestamp of each backup:
+
+tron@ubuntu-dev:~/Desktop/backups$ ls -lah
+total 16K
+drwxrwxr-x 2 tron tron 4.0K Feb 13 09:30 .
+drwxr-xr-x 7 tron tron 4.0K Feb 13 09:24 ..
+-rw-rw-r-- 1 tron tron   32 Feb 13 09:30 backup.log
+-rw-rw-r-- 1 tron tron  179 Feb 13 09:30 backup.tar.gz
+
+# The timestamp of out forst backup 👻!
+
+tron@ubuntu-dev:~/Desktop/backups$ cat backup.log 
+Thu Feb 13 09:30:01 AM UTC 2025
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
