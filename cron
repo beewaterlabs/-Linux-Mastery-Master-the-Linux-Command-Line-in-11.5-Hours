@@ -4,4 +4,37 @@
 # Each crontab file consists of commands, one per line, that execute automatically at the time specified by the first five fields at the beginning of each command line.
 # To edit your crontab file:
 
-cron -e
+crontab -e
+
+# You will see a handy guide:
+
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+
+# The first 5 columns are for schedualing. The 6th column is reserved for entering the command or script to be run.
+# Column 1: Minute [0-59], * = Any minute.
+# Column 2: Hours [0-23], 11 = 11am, 13 = 1pm, 24 = midnight, -12 to translate to a 12 hour clock time.
+# Column 3: 
+# Column 4: 
+# Column 5: 
+
+
+
