@@ -91,10 +91,18 @@ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/adminuser/bin
 
 # You can now run the previously named "backup.sh" script by typing "backup"
+# You can add all your bash scripts in "/home/adminuser/bin" and run them from anywhere in the file system, like this new "hello" bash script:
+
+#! /bin/bash
+echo "Hello, we are the Ramones 1 2 3 4"
+
+# Notice that the "hello" script is being executed from the "/opt/VBoxGuestAdditions-7.1.4" directory:
+
+adminuser@ubuntu:/opt/VBoxGuestAdditions-7.1.4$ hello
+Hello, we are the Ramones 1 2 3 4
 
 
 
-# 9:02 VID PAUSE
 
 
 
