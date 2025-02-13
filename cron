@@ -107,6 +107,10 @@ Hello World
 
 # Backup script for automation with crontab, using our ~/bin directory as it's path is added to the end of the ~/.bashrc bash shell configuration file: PATH="$PATH:$HOME/bin
 # Why: By using ~/bin to save .sh scripts, you can drop the .sh from the end of the file and still run your script + you can run your script from anywhere in the filesystem.
+# This backup script:
+1. Creates a compressed tar archive (backup.tar.gz) of Documents, Downloads, Pictures, and Videos folders
+2. Redirects errors to /dev/null
+3. Logs the date to backup.log after completion 
 
 tron@ubuntu-dev:~/bin$ cat backup 
 #!/bin/bash
@@ -114,7 +118,8 @@ tron@ubuntu-dev:~/bin$ cat backup
 tar -cvzf ~/Desktop/backups/backup.tar.gz ~/{Documents,Downloads,Pictures,Videos} 2>/dev/null
 date >> ~/Desktop/backups/backup.log
 
-# Scheduling your "backup" script via crontab -e:
+# Scheduling your "backup" script via crontab -e
+# This cron job runs at 9:30 AM every Thursday, executing the backup script located at ~/bin/backup
 
 # m        h       dom     mon     dow     command
 
@@ -134,7 +139,7 @@ drwxr-xr-x 7 tron tron 4.0K Feb 13 09:24 ..
 -rw-rw-r-- 1 tron tron   32 Feb 13 09:30 backup.log
 -rw-rw-r-- 1 tron tron  179 Feb 13 09:30 backup.tar.gz
 
-# The timestamp of out forst backup 👻!
+# Timestamp of the first backup 👻!
 
 tron@ubuntu-dev:~/Desktop/backups$ cat backup.log 
 Thu Feb 13 09:30:01 AM UTC 2025
