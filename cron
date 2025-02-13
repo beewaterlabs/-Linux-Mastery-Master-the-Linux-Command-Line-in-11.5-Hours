@@ -30,11 +30,34 @@ crontab -e
 # 
 
 # The first 5 columns are for schedualing. The 6th column is reserved for entering the command or script to be run.
-# Column 1: Minute [0-59], * = Any minute.
-# Column 2: Hours [0-23], 11 = 11am, 13 = 1pm, 24 = midnight, -12 to translate to a 12 hour clock time.
-# Column 3: 
-# Column 4: 
-# Column 5: 
+# You can have multiple spaces between the columns for easier readability.
+# * = Any
+
+# Column 1: m    | Minute [0-59]
+# Column 2: h    | Hours [0-23], 11 = 11am, 13 = 1pm, 24 = midnight, -12 to translate to a 12 hour clock time.
+# Column 3: dom  | Day of the month [1-31]
+# Column 4: mon  | Month [1-12] or [JAN, FEB, etc]
+# Column 5: dow  | Day of week [0-6] 0 = sunday, 6 = saturday or [MON, TUE, etc]
+
+# This cron job runs the command echo "Hello World" and appends the output to ~/Desktop/hello.txt every minute of every hour of every day:
+
+# m     h       dom     mon     dow     command
+
+  *     *       *       *       *       echo "Hello World" >> ~/Desktop/hello.txt
+
+# If I cat the "hello.txt" file, you will see how many minutes it took me to edit lines 42~48 after saving the crontab file:
+
+tron@ubuntu-dev:~$ cat Desktop/hello.txt | wc -l
+3
+
+# Witout piping to the word count command:
+
+tron@ubuntu-dev:~$ cat Desktop/hello.txt 
+Hello World
+Hello World
+Hello World
+
+
 
 
 
