@@ -2,6 +2,7 @@
 
 # Each user has a crontab file:
 # Each crontab file consists of commands, one per line, that execute automatically at the time specified by the first five fields at the beginning of each command line.
+# You can add as many tasks or jobs as you wish.
 
 # The first time you launch the crontab, you will select your prefered editor. 
 # To change this in the future, edit the ".selected_editor" hidden file in your ~/ (home) directory:
@@ -79,6 +80,18 @@ tron@ubuntu-dev:~$ cat Desktop/hello.txt
 Hello World
 Hello World
 Hello World
+
+# This cron job runs echo "Hello" and appends to ~/Desktop/hello-every-15-minutes.txt every 15 minutes (at minutes 0, 15, 30, and 45) of every hour, every day:
+
+# m             h       dom     mon     dow     command
+
+  0,15,30,45    *       *       *       *       echo "Hello" >> ~/Desktop/hello-every-15-minutes.txt
+
+# You can shorten the command, */15 would be every 15 minutes:
+
+# m             h       dom     mon     dow     command
+
+  */15          *       *       *       *       echo "Hello" >> ~/Desktop/hello-every-15-minutes.txt
 
 
 
