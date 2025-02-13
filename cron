@@ -1,10 +1,10 @@
-# cron        A time-based job scheduler used for automating and scheduling repetitive tasks. ☞ Named ater the Greek God of Time ☞ Cronos
+# cron        A time-based job scheduler used for automating and scheduling repetitive tasks. ☞ Named after the Greek God of Time ☞ Chronos
 
 # Each user has a crontab file:
 # Each crontab file consists of commands, one per line, that execute automatically at the time specified by the first five fields at the beginning of each command line.
 # You can add as many tasks or jobs as you wish.
 
-# The first time you launch the crontab, you will select your prefered editor. 
+# The first time you launch the crontab, you will select your preferred editor. 
 # To change this in the future, edit the ".selected_editor" hidden file in your ~/ (home) directory:
 # Option 1:
 nano .selected_editor
