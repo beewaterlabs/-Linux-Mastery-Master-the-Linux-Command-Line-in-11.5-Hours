@@ -93,6 +93,22 @@ Hello World
 
   */15          *       *       *       *       echo "Hello" >> ~/Desktop/hello-every-15-minutes.txt
 
+# To have the cron job run every 3 days:
+
+# m             h       dom       mon     dow     command
+
+  */15          *       */3       *       *       echo "Hello" >> ~/Desktop/hello-every-15-minutes.txt
+
+# This cron job runs one minute before midnight (23:59) on Sundays during January and December only, appending the echo message to the "Jan-Dec-2359-checkin.txt" text file:
+
+# m             h       dom       mon           dow       command
+
+  59            23      *         JAN,DEC       SUN       echo "Jan-Dec-1-min-to-midnight-checkin" >> ~/Desktop/Jan-Dec-2359-checkin.txt
+
+
+
+
+
 
 
 
