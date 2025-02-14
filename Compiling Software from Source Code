@@ -240,17 +240,40 @@ nano ls.c
 # After edit:
 1694 main (int argc, char **argv)
 1695 {
-1696 printf("Hello there you beautiful people \n")
+1696   printf("Hello there you beautiful people \n");
 1697   int i;
 1698   struct pending *thispend;
 1699   int n_files;
 1700   
 
+# To turn code written in the C programming language into a runnable program, it needs to be compiled into machine language.
+# This compilation process involves translating the C code into a format that the computer's processor can execute directly, before it can be run.
+# For that, we need a compilerfor the C programming language.
+# Now the GNU C compiler, or GCC, is the compiler that's used on GNU Linux systems.
+# To install the GNU C compiler, run the following command:
 
+sudo apt-get install gcc
 
+# Note: Different computers have different architectures, we need to configure the installation of this code to our specific machine's architecture.
+# Now there's a script that comes with that ability called "configure".
+# Go back up a folder to the parent directory ---> cd ..
+# Now we're in the "coreutils-9.6" folder.
+# Clear the screen ---> CTRL + l and run "ls", you can see here there's a script called "configure".
 
+# Let's run the configure script:
 
+bash configure
 
+# The script configures the GNU C compiler, the GCC
+# to make sure that when it compiles all this, the software that we tell it to
+# it's going to do it in a way that's appropriate for our computer's architecture.
+
+# To see the architecture your OS is using, type:
+
+uname -m
+
+# I'm using a MacBook Pro with the Apple M1 Pro chip as the host for an Ubuntu 24.04.1 LTS VM
+# Therefore my architecture is: aarch64
 
 
 
