@@ -1,3 +1,234 @@
 # Compiling Software from Source Code
 
-# From 
+# Offical GNU website: gnu.org/software/software.html
+# The "All GNU packages" section -->  List links to the home pages of all current GNU packages (every bit of code that is run GNU system)
+# We are going to focus on the "coreutils package: 
+
+coreutils        For all commands ran so far - ls, grep, find, locate, etc.
+
+# GNU offical https site link for the coreutils package:        https://ftp.gnu.org/gnu/coreutils/
+# After downloading the "coreutils-9.6.tar.xz" tarball file, run the file command to see the file type:
+
+tron@ubuntu-vm:~/Downloads$ file coreutils-9.6.tar.xz 
+coreutils-9.6.tar.xz: XZ compressed data, checksum CRC64
+
+# Notice that it's XZ compressed data - XZ compression is a lossless data compression format based on the LZMA algorithm, often used with the file extension ".xz". It provides high compression ratios.
+# This "Gzip vs Bzip2 vs XZ Performance Comparison" report shows the benchmarked results, indicating that xz provides the best compression ratio, closely followed by bzip2, with gzip coming in last.
+
+# To extract the file with XZ algorithm -->    Use the "J" option:
+
+tar -xJf coreutils-9.6.tar.xz
+
+# You can now see the extraction results:
+
+tron@ubuntu-vm:~/Downloads$ ls
+coreutils-9.6  coreutils-9.6.tar.xz
+
+# Navigate to the src (source code) directory:
+
+cd coreutils-9.6/src/
+
+# Listing all the files and directories, including hidden ones in human readable format:. 
+# Permission Note: Items that start with "d" =      Directories.
+# Permission Note: Items that end with "x"   =      Allows the file to be executed as a program. For directories, it allows access to the files within the directory.
+# File Notes: Files that end with .c         =      Written in the C programming language.
+
+
+tron@ubuntu-vm:~/Downloads/coreutils-9.6/src$ ls -lah
+
+total 3.2M
+drwxr-xr-x  3 tron tron 4.0K Jan 17 15:21 .
+drwxr-xr-x 12 tron tron 4.0K Jan 17 15:21 ..
+-rw-r--r--  1 tron tron 5.0K Jan  7 12:36 basename.c
+-rw-r--r--  1 tron tron  37K Jan  7 12:36 basenc.c
+drwxr-xr-x  2 tron tron 4.0K Jan 17 15:21 blake2
+-rw-r--r--  1 tron tron  24K Jan  7 12:36 cat.c
+-rw-r--r--  1 tron tron  17K Jan  7 12:36 chcon.c
+-rw-r--r--  1 tron tron  19K Jan  7 12:36 chmod.c
+-rw-r--r--  1 tron tron  11K Jan  7 12:36 chown.c
+-rw-r--r--  1 tron tron   49 Dec 27  2023 chown-chgrp.c
+-rw-r--r--  1 tron tron   49 Dec 27  2023 chown-chown.c
+-rw-r--r--  1 tron tron  18K Jan  7 12:36 chown-core.c
+-rw-r--r--  1 tron tron 2.4K Jan  7 12:36 chown-core.h
+-rw-r--r--  1 tron tron  148 Dec 27  2023 chown.h
+-rw-r--r--  1 tron tron  12K Jan  7 12:36 chroot.c
+-rw-r--r--  1 tron tron 7.9K Jan  7 12:36 cksum_avx2.c
+-rw-r--r--  1 tron tron 8.5K Jan  7 12:36 cksum_avx512.c
+-rw-r--r--  1 tron tron 9.9K Jan 15 16:53 cksum.c
+-rw-r--r--  1 tron tron  813 Jan  7 12:36 cksum.h
+-rw-r--r--  1 tron tron 7.0K Jan  7 12:36 cksum_pclmul.c
+-rw-r--r--  1 tron tron 8.9K Jan  7 12:36 cksum_vmull.c
+-rw-r--r--  1 tron tron  15K Jan  7 12:36 comm.c
+-rw-r--r--  1 tron tron 124K Jan  7 17:31 copy.c
+-rw-r--r--  1 tron tron  12K Jan  7 17:31 copy.h
+-rw-r--r--  1 tron tron 1.2K Jan  7 12:36 coreutils-arch.c
+-rw-r--r--  1 tron tron 6.2K Jan 12 15:04 coreutils.c
+-rw-r--r--  1 tron tron 1.2K Jan  7 12:36 coreutils-chgrp.c
+-rw-r--r--  1 tron tron 1.2K Jan  7 12:36 coreutils-dir.c
+-rw-r--r--  1 tron tron 1.2K Jan  7 12:36 coreutils-vdir.c
+-rw-r--r--  1 tron tron  42K Jan  7 17:31 cp.c
+-rw-r--r--  1 tron tron 4.5K Jan  7 12:36 cp-hash.c
+-rw-rw-r--  1 tron tron  207 Apr 15  2022 cp-hash.h
+-rw-r--r--  1 tron tron  25K May 29  2024 crctab.c
+-rw-r--r--  1 tron tron  38K Jan 10 14:46 csplit.c
+-rw-r--r--  1 tron tron 3.3K Jan 17 13:35 cu-progs.mk
+-rw-r--r--  1 tron tron  17K Jan  7 12:36 cut.c
+-rw-r--r--  1 tron tron  20K Jan  7 12:36 date.c
+-rwxr-xr-x  1 tron tron 1.4K Jan  7 12:36 dcgen
+-rw-r--r--  1 tron tron  77K Jan  7 12:36 dd.c
+-rw-r--r--  1 tron tron  55K Jan  7 12:36 df.c
+-rw-r--r--  1 tron tron  43K Jan  7 12:36 digest.c
+-rw-r--r--  1 tron tron  14K Jan  7 12:36 dircolors.c
+-rw-r--r--  1 tron tron  23K Jan 13 14:58 dircolors.h
+-rw-r--r--  1 tron tron 5.6K Jan  7 12:36 dircolors.hin
+-rw-r--r--  1 tron tron 3.2K Jan  7 12:36 dirname.c
+-rw-r--r--  1 tron tron  34K Jan  7 12:36 du.c
+-rw-r--r--  1 tron tron 7.8K Jan  7 12:36 echo.c
+-rw-r--r--  1 tron tron  26K Jan  7 12:36 env.c
+-rw-r--r--  1 tron tron 5.7K Jan  7 12:36 expand.c
+-rw-r--r--  1 tron tron  11K Jan  7 12:36 expand-common.c
+-rw-r--r--  1 tron tron 2.2K Jan  7 12:36 expand-common.h
+-rw-r--r--  1 tron tron  23K Jan  7 12:36 expr.c
+-rw-r--r--  1 tron tron 4.6K Jan  7 12:36 extract-magic
+-rw-r--r--  1 tron tron  77K Jan  7 12:36 factor.c
+-rw-rw-r--  1 tron tron   51 Oct 15  2016 false.c
+-rw-r--r--  1 tron tron 3.3K Jan  7 12:36 find-mount-point.c
+-rw-r--r--  1 tron tron  933 Jan  7 12:36 find-mount-point.h
+-rw-r--r--  1 tron tron  29K Jan  7 12:36 fmt.c
+-rw-r--r--  1 tron tron 7.9K Jan  7 12:36 fold.c
+-rw-r--r--  1 tron tron 5.4K Jan  7 12:36 force-link.c
+-rw-rw-r--  1 tron tron  207 Apr  3  2022 force-link.h
+-rw-r--r--  1 tron tron 4.8K Jan 13 14:58 fs.h
+-rw-r--r--  1 tron tron 5.2K Jan 13 14:58 fs-is-local.h
+-rw-r--r--  1 tron tron 5.2K Jan  7 12:36 getlimits.c
+-rw-r--r--  1 tron tron 3.0K Jan  7 12:36 group-list.c
+-rw-r--r--  1 tron tron  866 Jan  7 12:36 group-list.h
+-rw-r--r--  1 tron tron 3.9K Jan  7 12:36 groups.c
+-rw-r--r--  1 tron tron  32K Jan  7 12:36 head.c
+-rw-r--r--  1 tron tron 2.3K Jan  7 12:36 hostid.c
+-rw-r--r--  1 tron tron 3.0K Jan  7 12:36 hostname.c
+-rw-r--r--  1 tron tron  14K Jan  7 12:36 id.c
+-rw-r--r--  1 tron tron  32K Jan  7 17:31 install.c
+-rw-r--r--  1 tron tron 4.9K Jan  7 12:36 ioblksize.h
+-rw-r--r--  1 tron tron 6.7K Jan  7 12:36 iopoll.c
+-rw-rw-r--  1 tron tron  267 Apr  8  2023 iopoll.h
+-rw-r--r--  1 tron tron  32K Jan  7 12:36 join.c
+-rw-r--r--  1 tron tron 8.5K Jan  7 12:36 kill.c
+-rw-rw-r--  1 tron tron   37 Oct 15  2016 lbracket.c
+-rw-r--r--  1 tron tron 4.9K Jan  7 12:36 libstdbuf.c
+-rw-r--r--  1 tron tron 2.6K Jan  7 12:36 link.c
+-rw-r--r--  1 tron tron  24K Jan  7 12:36 ln.c
+-rw-r--r--  1 tron tron  23K Jan  7 12:36 local.mk
+-rw-r--r--  1 tron tron 2.2K Jan  7 12:36 logname.c
+-rw-r--r--  1 tron tron  81K Jan  7 12:36 longlong.h
+-rw-r--r--  1 tron tron 165K Jan 16 20:52 ls.c
+-rw-rw-r--  1 tron tron   44 Oct 15  2016 ls-dir.c
+-rw-rw-r--  1 tron tron  201 Nov 18  2015 ls.h
+-rw-rw-r--  1 tron tron   37 Oct 15  2016 ls-ls.c
+-rw-rw-r--  1 tron tron   46 Oct 15  2016 ls-vdir.c
+-rw-r--r--  1 tron tron 5.9K Jan  7 12:36 make-prime-list.c
+-rw-r--r--  1 tron tron 9.4K Jan  7 12:36 mkdir.c
+-rw-r--r--  1 tron tron 5.2K Jan  7 12:36 mkfifo.c
+-rw-r--r--  1 tron tron 8.4K Jan  7 12:36 mknod.c
+-rw-r--r--  1 tron tron  10K Jan  7 12:36 mktemp.c
+-rw-r--r--  1 tron tron  18K Jan  7 17:31 mv.c
+-rw-r--r--  1 tron tron 6.0K Jan  7 12:36 nice.c
+-rw-r--r--  1 tron tron  17K Jan  7 12:36 nl.c
+-rw-r--r--  1 tron tron 7.7K Jan  7 12:36 nohup.c
+-rw-r--r--  1 tron tron 3.1K Jan  7 12:36 nproc.c
+-rw-r--r--  1 tron tron  45K Jan  7 12:36 numfmt.c
+-rw-r--r--  1 tron tron  217 May  9  2024 octhexdigits.h
+-rw-r--r--  1 tron tron  61K Jan  7 12:36 od.c
+-rw-r--r--  1 tron tron 3.1K Jan  7 12:36 operand2sig.c
+-rw-r--r--  1 tron tron  845 Jan  7 12:36 operand2sig.h
+-rw-r--r--  1 tron tron  15K Jan  7 12:36 paste.c
+-rw-r--r--  1 tron tron  12K Jan  7 12:36 pathchk.c
+-rw-r--r--  1 tron tron  15K Jan  7 12:36 pinky.c
+-rw-r--r--  1 tron tron  86K Jan  7 12:36 pr.c
+-rw-r--r--  1 tron tron 102K Jan 13 14:58 primes.h
+-rw-r--r--  1 tron tron 4.0K Jan  7 12:36 printenv.c
+-rw-r--r--  1 tron tron  21K Jan  7 12:36 printf.c
+-rw-r--r--  1 tron tron 1.2K Jan  7 12:36 prog-fprintf.c
+-rw-r--r--  1 tron tron  989 Jan  7 12:36 prog-fprintf.h
+-rw-r--r--  1 tron tron  65K Jan  7 12:36 ptx.c
+-rw-r--r--  1 tron tron  11K Jan  7 12:36 pwd.c
+-rw-r--r--  1 tron tron 5.1K Jan  7 12:36 readlink.c
+-rw-r--r--  1 tron tron 7.7K Jan  7 12:36 realpath.c
+-rw-r--r--  1 tron tron 3.6K Jan  7 12:36 relpath.c
+-rw-r--r--  1 tron tron  919 Jan  7 12:36 relpath.h
+-rw-r--r--  1 tron tron  23K Jan  7 12:36 remove.c
+-rw-r--r--  1 tron tron 3.2K Jan  7 12:36 remove.h
+-rw-r--r--  1 tron tron  12K Jan  7 12:36 rm.c
+-rw-r--r--  1 tron tron 8.6K Jan  7 12:36 rmdir.c
+-rw-r--r--  1 tron tron 8.0K Jan  7 12:36 runcon.c
+-rw-r--r--  1 tron tron 8.5K Jan  7 12:36 selinux.c
+-rw-r--r--  1 tron tron 1.7K Jan  7 12:36 selinux.h
+-rw-r--r--  1 tron tron  21K Jan  7 12:36 seq.c
+-rw-r--r--  1 tron tron 9.9K Jan  7 12:36 set-fields.c
+-rw-r--r--  1 tron tron 1.5K Jan  7 12:36 set-fields.h
+-rw-r--r--  1 tron tron  910 May  9  2024 show-date.c
+-rw-r--r--  1 tron tron   74 May  9  2024 show-date.h
+-rw-r--r--  1 tron tron  40K Jan  7 12:36 shred.c
+-rw-r--r--  1 tron tron  18K Jan  7 12:36 shuf.c
+-rw-r--r--  1 tron tron  40K Jan 17 13:35 single-binary.mk
+-rw-r--r--  1 tron tron 3.7K Jan  7 12:36 sleep.c
+-rw-r--r--  1 tron tron 146K Jan 16 17:30 sort.c
+-rw-r--r--  1 tron tron  51K Jan  7 12:36 split.c
+-rw-r--r--  1 tron tron  57K Jan  7 12:36 stat.c
+-rw-r--r--  1 tron tron 1.9K Jan  7 12:36 statx.h
+-rw-r--r--  1 tron tron  11K Jan  7 12:36 stdbuf.c
+-rw-r--r--  1 tron tron  62K Jan  7 12:36 stty.c
+-rw-r--r--  1 tron tron 5.5K Jan  7 12:36 sum.c
+-rw-rw-r--  1 tron tron  570 Mar 13  2023 sum.h
+-rw-r--r--  1 tron tron 5.4K Jan  7 12:36 sync.c
+-rw-r--r--  1 tron tron  22K Jan  7 12:36 system.h
+-rw-r--r--  1 tron tron  18K Jan 15 17:38 tac.c
+-rw-r--r--  1 tron tron 5.9K Jan  7 12:36 tac-pipe.c
+-rw-r--r--  1 tron tron  79K Jan 13 17:20 tail.c
+-rw-r--r--  1 tron tron  11K Jan  7 12:36 tee.c
+-rw-r--r--  1 tron tron 4.6K Jan  7 12:36 temp-stream.c
+-rw-r--r--  1 tron tron  321 Aug 31  2023 temp-stream.h
+-rw-r--r--  1 tron tron  23K Jan  7 12:36 test.c
+-rw-r--r--  1 tron tron  19K Jan  7 12:36 timeout.c
+-rw-r--r--  1 tron tron  13K Jan  7 12:36 touch.c
+-rw-r--r--  1 tron tron  59K Jan  7 12:36 tr.c
+-rw-r--r--  1 tron tron 2.4K Jan  7 12:36 true.c
+-rw-r--r--  1 tron tron  11K Jan  7 12:36 truncate.c
+-rw-r--r--  1 tron tron  14K Jan  7 12:36 tsort.c
+-rw-r--r--  1 tron tron 3.2K Jan  7 12:36 tty.c
+-rw-rw-r--  1 tron tron   48 Oct 15  2016 uname-arch.c
+-rw-r--r--  1 tron tron 9.8K Jan  7 12:36 uname.c
+-rw-rw-r--  1 tron tron  146 Nov 18  2015 uname.h
+-rw-rw-r--  1 tron tron   49 Oct 15  2016 uname-uname.c
+-rw-r--r--  1 tron tron 9.2K Jan  7 12:36 unexpand.c
+-rw-r--r--  1 tron tron  19K Jan  7 12:36 uniq.c
+-rw-r--r--  1 tron tron 2.4K Jan  7 12:36 unlink.c
+-rw-r--r--  1 tron tron 5.9K Jan  7 12:36 uptime.c
+-rw-r--r--  1 tron tron 3.6K Jan  7 12:36 users.c
+-rw-r--r--  1 tron tron 1.9K Jan  7 12:36 wc_avx2.c
+-rw-r--r--  1 tron tron  30K Jan  7 12:36 wc.c
+-rw-r--r--  1 tron tron  119 Sep 25  2023 wc.h
+-rw-r--r--  1 tron tron 2.4K Jan  7 12:36 whoami.c
+-rw-r--r--  1 tron tron  22K Jan  7 12:36 who.c
+-rw-r--r--  1 tron tron 3.8K Jan 15 22:12 yes.c
+
+# Source code for the "ls" command:
+
+nano ls.c
+
+# We can modify this code and re-compile it into a running software.
+# In every C program, there's a function called the "main" function --> A very important function that always runs.
+
+# We are going to modify the "main" function so that every time "ls" runs, the computer will print out "Hello there you beautiful people" on the screen.
+# The main function starts out at line 1,143, use the following nano option ---> CRTL + _ and then enter 1143 to jump to that line number.
+# For the vi editor, you can type --->  :set nu to display line numbers.
+
+
+
+
+
+
+
+
+
+
