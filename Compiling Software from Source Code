@@ -275,14 +275,46 @@ uname -m
 # I'm using a MacBook Pro with the Apple M1 Pro chip as the host for an Ubuntu 24.04.1 LTS VM
 # Therefore my architecture is: aarch64
 
+# Now we will have a new file, "Makefile":
 
+tron@ubuntu-vm:~/Downloads/coreutils-9.6$ ls | grep Makefile
+Makefile
 
+# In order to run the Makefile, you'll need to have the make program.
+# The 'make' program in Linux is a build automation tool that simplifies the process of compiling and linking source code into executable programs or libraries.
+# It reads a 'Makefile' in the current directory, which contains rules specifying how to build the project, including dependencies and commands needed for compilation.
+# Installation of make:
 
+sudo apt-get install make
 
+# Now, run make:
 
+make 
 
+# What make is doing is compling all of the C files that it finds have not been compiled recently. *All of the C code in this folder including our src/ls.c file with our custom edit (above).
+# It's compiling it all into machine code, into binary code that can be ran on the computer.
 
+# The only step that remains, now that we've got this machine code,
+# is to install that machine code in the required places on our path for it to actually work:
 
+sudo make install
 
+# We've now installed each of the different pieces of software that came with this version 9.6 of the coreutils package! 👻
+# Now everytime we run the ls command, we now have our custom text:
 
+tron@ubuntu-vm:~/Downloads/coreutils-9.6$ ls
+Hello there you beautiful people
+backups  Desktop    Downloads  Music     Public    Videos
+bin      Documents  hello.txt  Pictures  Templates
+
+# To revert back, edit the coreutils-9.6/src/ls.c file back to the "Before edit" values (above)
+# and run the following command from the coreutils-9.6 directory where the "Makefile" lives:
+
+make && sudo make install
+
+# Now, the ls command will return the results as usual:
+
+tron@ubuntu-vm:~/Downloads/coreutils-9.6$ ls
+backups  Desktop    Downloads  Music     Public    Videos
+bin      Documents  hello.txt  Pictures  Templates
 
