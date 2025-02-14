@@ -227,7 +227,24 @@ nano ls.c
 # Go to line 1443 with the editor of your choice.
 # I will use nano with the -l option for opening the editor with lines showing, then CTRL + W to search for where "main" is in the file.
 # The course example is using coreutils-8.28, the main function is on line 1443 in that version of the ls.c file.
-# The current published coreutils version is coreutils-9.6, the main function lives on line 1694 in this version of the ls.c file.
+# The current published coreutils version is coreutils-9.6, the main function lives on line 1694 in this version of the ls.c file:
+
+# Before edit:
+1694 main (int argc, char **argv)
+1695 {
+1696   int i;
+1697   struct pending *thispend;
+1698   int n_files;
+1699
+
+# After edit:
+1694 main (int argc, char **argv)
+1695 {
+1696 printf("Hello there you beautiful people \n")
+1697   int i;
+1698   struct pending *thispend;
+1699   int n_files;
+1700   
 
 
 
