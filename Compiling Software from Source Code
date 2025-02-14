@@ -216,12 +216,24 @@ drwxr-xr-x  2 tron tron 4.0K Jan 17 15:21 blake2
 
 nano ls.c
 
-# We can modify this code and re-compile it into a running software.
+# We can modify this code and re-compile it into a running software program.
 # In every C program, there's a function called the "main" function --> A very important function that always runs.
 
 # We are going to modify the "main" function so that every time "ls" runs, the computer will print out "Hello there you beautiful people" on the screen.
-# The main function starts out at line 1,143, use the following nano option ---> CRTL + _ and then enter 1143 to jump to that line number.
+
+# The main function starts out at line 1,443, use the following nano option ---> CRTL + SHIFT + _ and then enter 1443 to jump to that line number.
 # For the vi editor, you can type --->  :set nu to display line numbers.
+
+# Go to line 1443 with the editor of your choice.
+# I will use nano with the -l option for opening the editor with lines showing, then CTRL + W to search for where "main" is in the file.
+# The course example is using coreutils-8.28, the main function is on line 1443 in that version of the ls.c file.
+# The current published coreutils version is coreutils-9.6, the main function lives on line 1694 in this version of the ls.c file.
+
+
+
+
+
+
 
 
 
