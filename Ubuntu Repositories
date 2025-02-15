@@ -1,0 +1,16 @@
+# Ubuntu Repositories
+
+# On Ubuntu ther are 4 Repositories
+
+1. Canonical-supported free and open-source software (main)
+2. Community-maintained free and open-source software (universe)
+3. Proprietary drivers for devices (restricted)
+4. Software restricted by copyright or legal issues (multiverse)
+
+# To see a list of packages available ---> navigate to packages.ubuntu.com
+
+# To view the system architecture:
+
+uname -m
+
+# Advanced packaging tool = apt
