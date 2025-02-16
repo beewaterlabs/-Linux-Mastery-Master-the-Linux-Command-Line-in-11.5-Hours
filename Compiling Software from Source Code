@@ -227,20 +227,22 @@ nano ls.c
 # Go to line 1443 with the editor of your choice.
 # I will use nano with the -l option for opening the editor with lines showing, then CTRL + W to search for where "main" is in the file.
 # The course example is using coreutils-8.28, the main function is on line 1443 in that version of the ls.c file.
-# The current published coreutils version is coreutils-9.6, the main function lives on line 1694 in this version of the ls.c file:
+# The current published coreutils version is coreutils-9.6, the main function lives on line 1644 in this version of the ls.c file:
 
 # Before edit:
-1694 main (int argc, char **argv)
-1695 {
-1696   int i;
-1697   struct pending *thispend;
-1698   int n_files;
-1699
+1643 int
+1644 main (int argc, char **argv)
+1645 {
+1646   int i;
+1647   struct pending *thispend;
+1648   int n_files;
+1649
+
 
 # After edit:
 1694 main (int argc, char **argv)
 1695 {
-1696   printf("Hello there you beautiful people \n");
+1696   printf("Hello there you beautiful people \n");    | ls -lah | 
 1697   int i;
 1698   struct pending *thispend;
 1699   int n_files;
@@ -299,18 +301,41 @@ make
 
 sudo make install
 
+# If you see the following error:
+
+# Fix:
+
+This error appears to be occurring while trying to compile GNU Coreutils 9.4. The error suggests there's an issue with the build system, specifically in the 'po' (translations) directory.
+Before running make, you likely need to run the configuration steps. Here's what I suggest doing:
+
+First, clean any partial build artifacts:
+
+sudo make distclean
+
+Then run the configuration:
+
+./configure
+
+After that, try building again:
+
+sudo make
+
 # We've now installed each of the different pieces of software that came with this version 9.6 of the coreutils package! 👻
 # Now everytime we run the ls command, we now have our custom text:
 
-tron@ubuntu-vm:~/Downloads/coreutils-9.6$ ls
-Hello there you beautiful people
-backups  Desktop    Downloads  Music     Public    Videos
-bin      Documents  hello.txt  Pictures  Templates
+tron@ubuntu-dev:~/GNU_Packages/coreutils-9.4$ ls
+Hello there you beautiful people 
+ABOUT-NLS       build-aux      configure      gnulib-tests  m4           man             src         THANKS-to-translators
+aclocal.m4      cfg.mk         configure.ac   GNUmakefile   maint.mk     NEWS            tests       THANKStt.in
+AUTHORS         ChangeLog      COPYING        init.cfg      Makefile     po              THANKS      TODO
+bootstrap       config.log     dist-check.mk  INSTALL       Makefile.am  README          thanks-gen
+bootstrap.conf  config.status  doc            lib           Makefile.in  README-install  THANKS.in
+
 
 # To revert back, edit the coreutils-9.6/src/ls.c file back to the "Before edit" values (above)
 # and run the following command from the coreutils-9.6 directory where the "Makefile" lives:
 
-make && sudo make install
+sudo make && sudo make install
 
 # Now, the ls command will return the results as usual:
 
