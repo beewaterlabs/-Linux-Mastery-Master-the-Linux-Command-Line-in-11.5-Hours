@@ -1,0 +1,21 @@
+# Updating the Cache and Upgrading Software
+# Advanced Package Tool - apt
+
+1. Update the lists in your cache
+
+# Update to make sure that the package versions in there
+# are the same as the package versions in the repositories:
+# sudo apt-get update ---> Updates your cache.
+
+sudo apt-get update
+
+2. Upgrade all the software on your system:
+
+sudo apt-get upgrade
+
+
+
+
+
+
+
