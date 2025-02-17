@@ -33,4 +33,34 @@ sudo apt-get autoremove
 
 /var/cache/apt/archives
 
+# You can see that I have 204 compressed archive files:
+
+tron@ubuntu-dev:/var/cache/apt/archives$ ls -lh | wc -l
+204
+
+# This currently takes up 1.3G of space:
+
+tron@ubuntu-dev:/var/cache/apt/archives$ ls -lh
+total 1.3G
+
+# You don't have to even be in the folder to remove them.
+# clean gets rid of everything:
+
+sudo apt-get clean
+
+# Sometimes you don't want to delete all of those for whatever reason
+# and you only want to get rid of those packages, those archives.
+# But the ones for packages that can no longer be accessed from the actual Ubuntu repositories.
+# Now this is usually for systems that are very old
+# and want to keep their cache going for years and years and years.
+# And every now and then you know, trim the leaves
+# and get rid of their deb packages that can no longer be downloaded for whatever reason.
+# To do that, run:
+
+sudo apt-get autoclean
+
+
+
+
+
 
