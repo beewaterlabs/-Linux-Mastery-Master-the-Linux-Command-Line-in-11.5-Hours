@@ -16,9 +16,60 @@ sudo nano /etc/apt/sources.list <--- Worked in "artful" release
 # Ubuntu sources have moved to /etc/apt/sources.list.d/ubuntu.sources
 # The "deb-src" text does not exist in this OS release.
 
+sudo nano /etc/apt/sources.list.d/ubuntu.sources
+
+# Add deb-src to each entry, here is the file after edits:
+
+Types: deb deb-src
+URIs: http://ports.ubuntu.com/ubuntu-ports/
+Suites: noble noble-updates noble-backports
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+Types: deb deb-src
+URIs: http://ports.ubuntu.com/ubuntu-ports/
+Suites: noble-security
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
 # Before we can download source code,
 # we need to install one more package:
 
 sudo apt-get install dpkg-dev
+
+# Installing pre-compiled binary versions of software packages, uses the following syntax:
+# sudo apt-get install <software-package-name>
+# sudo apt-get install x11-apps
+
+# To download the source code, use the following syntax:
+# sudo apt-get source <software-package-name>
+
+sudo apt-get source x11-apps
+
+# Now you can see the source code tarball:
+
+tron@ubuntu-dev:~/Desktop$ sudo apt-get source x11-apps
+Reading package lists... Done
+NOTICE: 'x11-apps' packaging is maintained in the 'Git' version control system at:
+https://salsa.debian.org/xorg-team/app/x11-apps.git
+Please use:
+git clone https://salsa.debian.org/xorg-team/app/x11-apps.git
+to retrieve the latest (possibly unreleased) updates to the package.
+Skipping already downloaded file 'x11-apps_7.7+11build3.dsc'
+Need to get 4,878 kB of source archives.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble/main x11-apps 7.7+11build3 (tar) [4,878 kB]
+Fetched 4,878 kB in 2s (2,909 kB/s)   
+Skipping unpack of already unpacked source in x11-apps-7.7+11build3
+W: Download is performed unsandboxed as root as file 'x11-apps_7.7+11build3.tar.gz' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
+
+# Now we have the source code files:
+
+tron@ubuntu-dev:~/Desktop$ ls -lh | grep x11
+drwxr-xr-x 26 root root 4.0K Nov 14  2023 x11-apps-7.7+11build3
+-rw-r--r--  1 root root 2.0K Mar 31  2024 x11-apps_7.7+11build3.dsc
+-rw-r--r--  1 root root 4.7M Mar 31  2024 x11-apps_7.7+11build3.tar.gz
+
+
+
 
 
