@@ -72,4 +72,10 @@ sudo apt-get install x11-apps
 # which means that the code that make the software
 # has been pre-compiled and ready to go beforehand.
 
-# One of the x11 apps is "xman"
+# One of the x11-apps is the "xman" software:
+# It is a GUI man pages search tool that you can use
+# to look through man pages & filter by sections!
+
+
+
+
