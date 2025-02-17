@@ -1,0 +1,36 @@
+# Uninstalling Software:
+
+# syntax:
+
+sudo apt-get remove <package-name>
+
+# This will leave configuration files on the system.
+# Can be helpfull if you plan to re-install the package in the future and want all the setting to be the same.
+
+# To remove a package and its configuration files:
+
+sudo apt-get purge x11-apps
+
+# In order to remove packages that were installed as dependencies
+# but are no longer required for any other package on the system:
+
+sudo apt-get autoremove
+
+# Whenever you download an installer package
+# a copy of the package is saved locally on your computer.
+# Now this package is then unpacked and installed on your system.
+
+# When you install a package, it downloads itself as a compressed archive
+# then unpacks itself and installs itself on your system.
+
+# Now because of that two-step process
+# not only is a package installed on your system
+# but a compressed version of it is also saved.
+# These compressed archive files are not needed after installation.
+
+# Save yourself massive amounts of space just by deleting these archives.
+# These archives are stored at:
+
+/var/cache/apt/archives
+
+
