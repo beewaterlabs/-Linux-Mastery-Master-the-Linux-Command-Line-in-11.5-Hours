@@ -8,9 +8,33 @@
 4. Software restricted by copyright or legal issues (multiverse)
 
 # To see a list of packages available ---> navigate to packages.ubuntu.com
+# Packages are listed by listed by OS release codename, run the following command to view your OS codename:
+
+# lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.2 LTS
+Release:	24.04
+Codename:	noble
+
+# Another way to view your OS codename:
+
+cat /etc/os-release | grep UBUNTU_CODENAME
+UBUNTU_CODENAME=noble
+
+# Each package has other related packages:
+
+Required - Mandatory for the package to function.
+Recommended - Needed for normal use.
+Suggested - Suggested for Interest.
+Enhances - Enhances the package in some way.
+
+# Package managers are used to manage all these package relationships.
+# Ubuntu's package manager:
+# Advanced packaging tool = apt
 
 # To view the system architecture:
 
 uname -m
 
-# Advanced packaging tool = apt
+
