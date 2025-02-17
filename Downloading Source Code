@@ -8,8 +8,11 @@
 
 sudo nano /etc/apt/sources.list <--- Worked in "artful" release
 
+# In that OS release, you would uncomment the "deb-src" to activate the ability to download source code.
+
 # Note, in Ubuntu "24.04.2 LTS (Noble Numbat)"
 
 # Ubuntu sources have moved to /etc/apt/sources.list.d/ubuntu.sources
+
 
 
