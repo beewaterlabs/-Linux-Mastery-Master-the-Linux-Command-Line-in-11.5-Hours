@@ -1,0 +1,75 @@
+# Installing New Packages
+
+# Search for package name:
+
+apt-cache search <package-name>
+
+tron@ubuntu-dev:/var/lib/apt/lists$ apt-cache search xeyes
+
+x11-apps - X applications
+xfce4-eyes-plugin - eyes that follow your mouse for the Xfce4 panel
+tron@ubuntu-dev:/var/lib/apt/lists$ apt-cache show x11-apps
+Package: x11-apps
+Architecture: arm64
+Version: 7.7+11build3
+Priority: optional
+Section: x11
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 3254
+Depends: libc6 (>= 2.38), libpng16-16t64 (>= 1.6.2), libsm6, libx11-6, libx11-xcb1 (>= 2:1.8.7), libxaw7 (>= 2:1.0.14), libxcb-damage0, libxcb-present0, libxcb-xfixes0, libxcb1, libxcursor1 (>> 1.1.2), libxext6, libxft2 (>> 2.1.1), libxi6 (>= 2:1.2.99.4), libxkbfile1 (>= 1:1.1.0), libxmu6 (>= 2:1.1.3), libxmuu1 (>= 2:1.1.3), libxrender1, libxt6t64 (>= 1:1.1.0), man-db
+Recommends: xbitmaps
+Suggests: mesa-utils
+Conflicts: bitmap, oclock, transset, x11perf, xbiff, xcalc, xclipboard, xclock, xconsole, xcursorgen, xditview, xeyes, xgc, xload, xlogo, xmag, xman, xmore, xwd, xwud
+Replaces: bitmap, oclock, transset, x11perf, xbiff, xcalc, xclipboard, xclock, xconsole, xcursorgen, xditview, xeyes, xgc, xload, xlogo, xmag, xman, xmore, xwd, xwud
+Filename: pool/main/x/x11-apps/x11-apps_7.7+11build3_arm64.deb
+Size: 690998
+MD5sum: 709c187044f6e8c17f74a49f6aca3f0c
+SHA1: a7fd7351d2bd8fef5a0f57275a029f9d5f34570f
+SHA256: 3396c7ea806354fd25c6c8ab9d96491ab08028374956c1a6e69f5bf6902505d0
+SHA512: b4bd2d643afefb17dd7e69e8b1fdf3341fdcd7891af5e8f4ccc1279276cfca9f61e45d728021f3e4fcf43671f4115b53e082f39ec8fc40e3ea38567d5d99e724
+Description-en: X applications
+ This package provides a miscellaneous assortment of X applications
+ that ship with the X Window System, including:
+  - atobm, bitmap, and bmtoa, tools for manipulating bitmap images;
+  - ico, a demo program animating polyhedrons;
+  - oclock and xclock, graphical clocks;
+  - rendercheck, a program to test render extension implementations;
+  - transset, a tool to set opacity property on a window;
+  - xbiff, a tool which tells you when you have new email;
+  - xcalc, a scientific calculator desktop accessory;
+  - xclipboard, a tool to manage cut-and-pasted text selections;
+  - xconsole, which monitors system console messages;
+  - xcursorgen, a tool for creating X cursor files from PNGs;
+  - xditview, a viewer for ditroff output;
+  - xedit, a simple text editor for X;
+  - xeyes, a demo program in which a pair of eyes track the pointer;
+  - xgc, a graphics demo;
+  - xload, a monitor for the system load average;
+  - xlogo, a demo program that displays the X logo;
+  - xmag, which magnifies parts of the X screen;
+  - xman, a manual page browser;
+  - xmore, a text pager;
+  - xwd, a utility for taking window dumps ("screenshots") of the X session;
+  - xwud, a viewer for window dumps created by xwd;
+  - Xmark, x11perf, and x11perfcomp, tools for benchmarking graphical
+    operations under the X Window System;
+ .
+ The xbiff, xcalc, xconsole, xedit and xman programs use bitmap images
+ provided by the xbitmaps package.
+Description-md5: 5702f23f04bb60fad1ae4604e92691fa
+Task: ubuntu-desktop-minimal, ubuntu-desktop, ubuntu-desktop-raspi, kubuntu-desktop, xubuntu-minimal, xubuntu-desktop, lubuntu-desktop, ubuntustudio-desktop-core, ubuntustudio-desktop, ubuntukylin-desktop, ubuntukylin-desktop-minimal, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi, ubuntu-unity-desktop, edubuntu-desktop-gnome-minimal, edubuntu-desktop-gnome-raspi, ubuntucinnamon-desktop-minimal, ubuntucinnamon-desktop-raspi
+
+# Run apt-get to get data from the internet, not just from our local cache.
+
+sudo apt-get install x11-apps
+
+# Note, x11-apps is a pre-compiled package,
+# also known as a binary package.
+# Most packages are binary packages,
+# which means that the code that make the software
+# has been pre-compiled and ready to go beforehand.
+
+# One of the x11 apps is "xman"
