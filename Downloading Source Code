@@ -1,0 +1,15 @@
+# Downloading Source Code
+
+# /etc/apt/sources.list:
+# Is a configuration file
+# that your package manager uses to determine which repositories
+# and which package files it downloads.
+# In other words, which sources it downloads:
+
+sudo nano /etc/apt/sources.list <--- Worked in "artful" release
+
+# Note, in Ubuntu "24.04.2 LTS (Noble Numbat)"
+
+# Ubuntu sources have moved to /etc/apt/sources.list.d/ubuntu.sources
+
+
